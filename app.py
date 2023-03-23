@@ -32,14 +32,43 @@ placeholder = st.empty()
 
 # dataframe filter 
 
+st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=1)
+select = st.sidebar.selectbox('Select a Ethnicity',df['Ethnicity'])
+
+#get the state selected in the selectbox
+state_data = df[df['Ethnicity'] == select]
+select_status = st.sidebar.radio("Users status", ('Black', 'Caucasian', 'Mogolian','Others'))
+
+def get_total_dataframe(df):
+    total_dataframe = pd.DataFrame({
+    'Ethnicity':['Black', 'Caucasian', 'Mogolian','Others'],
+    'Number of Users':(dataset.iloc[0]['Black'],
+    dataset.iloc[0]['Caucasian'], 
+    dataset.iloc[0]['Mogolian'],dataset.iloc[0]['Others'])})
+    return total_dataframe
+
+state_total = get_total_dataframe(state_data)
+
+if st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=2):
+    st.markdown("## **Ethnic level analysis**")
+    st.markdown("### Overall Black,Caucasian, Mogolian and " +
+    "Others %s " % (select))
+    if not st.checkbox('Hide Graph', False, key=1):
+        state_total_graph = px.bar(
+        state_total, 
+        x='Ethnicity',
+        y='S/No',
+        labels={'Number of Users':'Number of Users in %s' % (select)},
+        color='Ethnicity')
+        st.plotly_chart(state_total_graph)
+
+# dataframe filter 
 
 # near real-time / live feed simulation 
 
 for seconds in range(200):
 #while True: 
     
-   
-
    
         # create two columns for charts 
 
