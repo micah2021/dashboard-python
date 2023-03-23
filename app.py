@@ -37,7 +37,7 @@ for seconds in range(1):
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
             st.markdown("### First Chart")
-            fig1 = px.histogram(data_frame = df, x = 'Porn')
+            fig1 = px.histogram(data_frame = df, x = 'Gender')
             st.write(fig1)
        
         with fig_col2:
