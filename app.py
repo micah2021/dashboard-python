@@ -35,17 +35,18 @@ for seconds in range(200):
         # create two columns for charts 
 
         fig_col1, fig_col2 = st.columns(2)
-        with fig_col1:
-            st.markdown("### First Chart")
-            fig = px.density_heatmap(data_frame=df, y = 'Porn', x = 'Ethnicity')
-            st.write(fig)
         with fig_col2:
             st.markdown("### Second Chart")
             fig2 = px.histogram(data_frame = df, x = 'Porn')
             st.write(fig2)
-        st.markdown("### Detailed Data View")
-        st.dataframe(df)
-        time.sleep(1)
+       
+        with fig_col1:
+            st.markdown("### First Chart")
+            fig = px.density_heatmap(data_frame=df, y = 'Porn', x = 'Ethnicity')
+            st.write(fig)
+            st.markdown("### Detailed Data View")
+            st.dataframe(df)
+            time.sleep(1)
     #placeholder.empty() 
 
 
