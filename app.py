@@ -72,18 +72,7 @@ def get_total_dataframe(df):
 
 state_total = get_total_dataframe(state_data)
 
-if st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=2):
-    st.markdown("## **Ethnic level analysis**")
-    st.markdown("### Overall Black,Caucasian, Mogolian and " +
-    "Others %s " % (select))
-    if not st.checkbox('Hide Graph', False, key=1):
-        state_total_graph = px.bar(
-        state_total, 
-        x='Ethnicity',
-        y='S/No',
-        labels={'Number of Users':'Number of Users in %s' % (select)},
-        color='Ethnicity')
-        st.plotly_chart(state_total_graph)
+
 
 # dataframe filter 
 
