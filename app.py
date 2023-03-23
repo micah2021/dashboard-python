@@ -44,30 +44,8 @@ for seconds in range(1):
             st.markdown("### Second Chart")
             fig = px.density_heatmap(data_frame=df, y = 'Porn', x = 'Ethnicity')
             st.write(fig)
-            st.markdown("### Detailed Data View")
-        st.dataframe(df)
-        time.sleep(1)
-    #placeholder.empty() 
-
-
-       
-
-# dataframe filter 
-st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=1)
-select = st.sidebar.selectbox('Select a Ethnicity',pd.unique(df['Ethnicity']))  
-def get_total_dataframe(df):
-    total_dataframe = pd.DataFrame({
-    'Ethnicity':['Black', 'Caucasian', 'Mogolian','Others'],
-    'Number of Users':
-    (df.iloc[0]['Porn'],
-    df.iloc[0]['Neutral'], 
-    df.iloc[0]['Sexy'],
-    df.iloc[0]['Drawing'])})
-    return total_dataframe
-
-state_total = get_total_dataframe(state_data)
-
-
+	
+	
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type',
 									('Line Chart', 'Bar Chart', 'Bubble Chart'))
 
@@ -139,4 +117,28 @@ elif chart_visual == 'Bubble Chart':
 
 st.plotly_chart(fig, use_container_width=True)
 
+
+
+            st.markdown("### Detailed Data View")
+        st.dataframe(df)
+        time.sleep(1)
+    #placeholder.empty() 
+
+
+       
+
+# dataframe filter 
+st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=1)
+select = st.sidebar.selectbox('Select a Ethnicity',pd.unique(df['Ethnicity']))  
+def get_total_dataframe(df):
+    total_dataframe = pd.DataFrame({
+    'Ethnicity':['Black', 'Caucasian', 'Mogolian','Others'],
+    'Number of Users':
+    (df.iloc[0]['Porn'],
+    df.iloc[0]['Neutral'], 
+    df.iloc[0]['Sexy'],
+    df.iloc[0]['Drawing'])})
+    return total_dataframe
+
+state_total = get_total_dataframe(state_data)
 
