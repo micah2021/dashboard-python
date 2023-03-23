@@ -56,9 +56,6 @@ if st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=2):
 
 # dataframe filter 
 
-df = df[df['Ethnicity']==job_filter]
-
-
 # near real-time / live feed simulation 
 
 for seconds in range(200):
