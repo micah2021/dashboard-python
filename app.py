@@ -91,7 +91,7 @@ if chart_visual == 'Line Chart':
 		fig.add_trace(go.Scatter(x = data.Country, y = data.Mogolian,
 								mode = 'lines',
 								name = 'Mogolian'))
-	if selected_status == 'Others':
+	if selected_status == 'Others':   
 		fig.add_trace(go.Scatter(x=data.Country, y=data.Others,
 								mode='lines',
 								name="Others"))
@@ -131,7 +131,7 @@ elif chart_visual == 'Bubble Chart':
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name = 'Mogolian'))
 	if selected_status == 'Others':
-		fig.add_trace(go.Scatter(x=data.Country,
+		fig.add_trace(go.Scatter(x=data.Person_Nudity,
 								y=data.Others,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
