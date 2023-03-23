@@ -10,14 +10,14 @@ df = pd.read_csv("https://raw.githubusercontent.com/Lexie88rus/bank-marketing-an
 
 
 st.set_page_config(
-    page_title = 'Real-Time Data Science Dashboard',
+    page_title = 'Lifelight Dashboard',
     page_icon = '✅',
     layout = 'wide'
 )
 
 # dashboard title
 
-st.title("Real-Time / Live Data Science Dashboard")
+st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
 
