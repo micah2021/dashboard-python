@@ -38,10 +38,10 @@ def get_total_dataframe(df):
     total_dataframe = pd.DataFrame({
     'Ethnicity':['Black', 'Caucasian', 'Mogolian','Others'],
     'Number of Users':
-    (df.loc[0]['Black'],
-    df.loc[0]['Caucasian'], 
-    df.loc[0]['Mogolian'],
-    df.loc[0]['Others'])})
+    (df.iloc[0]['Porn'],
+    df.iloc[0]['Neutral'], 
+    df.iloc[0]['Sexy'],
+    df.iloc[0]['Drawing'])})
     return total_dataframe
 
 state_total = get_total_dataframe(state_data)
