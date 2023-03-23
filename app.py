@@ -28,7 +28,7 @@ placeholder = st.empty()
 
 # dataframe filter 
 st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=1)
-select = st.sidebar.selectbox('Select a Ethnicity',df['Ethnicity'])
+select = st.sidebar.selectbox('Select a Ethnicity',pd.unique(df['Ethnicity']))  
 
 #get the state selected in the selectbox
 state_data = df[df['Ethnicity'] == select]
