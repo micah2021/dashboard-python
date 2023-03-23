@@ -28,7 +28,7 @@ job_filter = st.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 # creating a single-element container.
 placeholder = st.empty()
-#for seconds in range(200):
+for seconds in range(0):
 #while True: 
     
    
