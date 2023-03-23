@@ -5,7 +5,7 @@ import time # to simulate a real time data, time loop
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-
+import matplotlib.pyplot as plt
 
 # read csv from a github repo
 df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
@@ -47,14 +47,12 @@ for seconds in range(1):
 	
 	
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type',
-									('Line Chart', 'Bar Chart', 'Bubble Chart'))
-
-st.sidebar.checkbox("Show Analysis by Users", True, key = 3)
+							('Line Chart', 'Bar Chart', 'Bubble Chart'))
+st.sidebar.checkbox("Show Analysis by Users", True, key = 1)
 selected_status = st.sidebar.selectbox('Select Users Status',
 									options = ['Black',
 												'Caucasian', 'Mogolian',
 												'Others'])
-
 fig = go.Figure()
 
 if chart_visual == 'Line Chart':
