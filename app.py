@@ -45,8 +45,8 @@ for seconds in range(200):
             fig = px.density_heatmap(data_frame=df, y = 'Porn', x = 'Ethnicity')
             st.write(fig)
             st.markdown("### Detailed Data View")
-            st.dataframe(df)
-            time.sleep(1)
+        st.dataframe(df)
+        time.sleep(1)
     #placeholder.empty() 
 
 
