@@ -68,76 +68,74 @@ def get_total_dataframe(df):
 state_total = get_total_dataframe(state_data)
 
 
-
-
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type',
 									('Line Chart', 'Bar Chart', 'Bubble Chart'))
 
 st.sidebar.checkbox("Show Analysis by Smoking Status", True, key = 1)
-selected_status = st.sidebar.selectbox('Select Smoking Status',
-									options = ['Formerly_Smoked',
-												'Smoked', 'Never_Smoked',
-												'Unknown'])
+selected_status = st.sidebar.selectbox('Select Users Status',
+									options = ['Black',
+												'Caucasian', 'Mogolian',
+												'Others'])
 
 fig = go.Figure()
 
 if chart_visual == 'Line Chart':
-	if selected_status == 'Formerly_Smoked':
-		fig.add_trace(go.Scatter(x = data.Country, y = data.formerly_smoked,
+	if selected_status == 'Black':
+		fig.add_trace(go.Scatter(x = data.Country, y = data.Black,
 								mode = 'lines',
-								name = 'Formerly_Smoked'))
-	if selected_status == 'Smoked':
-		fig.add_trace(go.Scatter(x = data.Country, y = data.Smokes,
-								mode = 'lines', name = 'Smoked'))
-	if selected_status == 'Never_Smoked':
-		fig.add_trace(go.Scatter(x = data.Country, y = data.Never_Smoked,
+								name = 'Black'))
+	if selected_status == 'Caucasian':
+		fig.add_trace(go.Scatter(x = data.Country, y = data.Caucasian,
+								mode = 'lines', name = 'Caucasian'))
+	if selected_status == 'Mogolian':
+		fig.add_trace(go.Scatter(x = data.Country, y = data.Mogolian,
 								mode = 'lines',
-								name = 'Never_Smoked'))
-	if selected_status == 'Unknown':
-		fig.add_trace(go.Scatter(x=data.Country, y=data.Unknown,
+								name = 'Mogolian'))
+	if selected_status == 'Others':
+		fig.add_trace(go.Scatter(x=data.Country, y=data.Others,
 								mode='lines',
-								name="Unknown"))
+								name="Others"))
 
 elif chart_visual == 'Bar Chart':
-	if selected_status == 'Formerly_Smoked':
-		fig.add_trace(go.Bar(x=data.Country, y=data.formerly_smoked,
-							name='Formerly_Smoked'))
-	if selected_status == 'Smoked':
-		fig.add_trace(go.Bar(x=data.Country, y=data.Smokes,
-							name='Smoked'))
-	if selected_status == 'Never_Smoked':
-		fig.add_trace(go.Bar(x=data.Country, y=data.Never_Smoked,
-							name='Never_Smoked'))
-	if selected_status == 'Unknown':
-		fig.add_trace(go.Bar(x=data.Country, y=data.Unknown,
-							name="Unknown"))
+	if selected_status == 'Black':
+		fig.add_trace(go.Bar(x=data.Ethnicity, y=data.Black,
+							name='Black'))
+	if selected_status == 'Caucasian':
+		fig.add_trace(go.Bar(x=data.Ethnicity, y=data.Caucasian,
+							name='Caucasian'))
+	if selected_status == 'Mogolian':
+		fig.add_trace(go.Bar(x=data.Ethnicity, y=data.Mogolian,
+							name='Mogolian'))
+	if selected_status == 'Others':
+		fig.add_trace(go.Bar(x=data.Ethnicity, y=data.Others,
+							name="Others"))
 
 elif chart_visual == 'Bubble Chart':
-	if selected_status == 'Formerly_Smoked':
-		fig.add_trace(go.Scatter(x=data.Country,
-								y=data.formerly_smoked,
+	if selected_status == 'Black':
+		fig.add_trace(go.Scatter(x=data.Person_Nudity,
+								y=data.Black,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
-								name='Formerly_Smoked'))
+								name='Black'))
 		
 	if selected_status == 'Smoked':
-		fig.add_trace(go.Scatter(x=data.Country, y=data.Smokes,
+		fig.add_trace(go.Scatter(x=data.Person_Nudity, y=data.Caucasian,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
-								name='Smoked'))
+								name='Caucasian'))
 		
-	if selected_status == 'Never_Smoked':
-		fig.add_trace(go.Scatter(x=data.Country,
-								y=data.Never_Smoked,
+	if selected_status == 'Mogolian':
+		fig.add_trace(go.Scatter(x=data.Person_Nudity,
+								y=data.Mogolian,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
-								name = 'Never_Smoked'))
-	if selected_status == 'Unknown':
+								name = 'Mogolian'))
+	if selected_status == 'Others':
 		fig.add_trace(go.Scatter(x=data.Country,
-								y=data.Unknown,
+								y=data.Others,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
-								name="Unknown"))
+								name="Others"))
 
 st.plotly_chart(fig, use_container_width=True)
 
