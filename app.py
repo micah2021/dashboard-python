@@ -29,7 +29,17 @@ placeholder = st.empty()
 
 # dataframe filter 
 
-df = df[df['Gender']==job_filter]
+df = df[df['Ethnicity']==job_filter]
+job_filter = st.selectbox("Select the Ethnicity", pd.unique(df['Ethnicity']))
+
+
+# creating a single-element container.
+placeholder = st.empty()
+
+# dataframe filter 
+
+df = df[df['Ethnicity']==job_filter]
+
 
 # near real-time / live feed simulation 
 
