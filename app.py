@@ -28,7 +28,7 @@ job_filter = st.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 # creating a single-element container.
 placeholder = st.empty()
-for seconds in range(2):
+#for seconds in range(200):
 #while True: 
     
    
@@ -36,12 +36,12 @@ for seconds in range(2):
 
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
-            st.markdown("### Second Chart")
+            st.markdown("### First Chart")
             fig1 = px.histogram(data_frame = df, x = 'Porn')
             st.write(fig1)
        
         with fig_col2:
-            st.markdown("### First Chart")
+            st.markdown("### Second Chart")
             fig = px.density_heatmap(data_frame=df, y = 'Porn', x = 'Ethnicity')
             st.write(fig)
             st.markdown("### Detailed Data View")
