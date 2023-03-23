@@ -37,9 +37,11 @@ select_status = st.sidebar.radio("Users status", ('Black', 'Caucasian', 'Mogolia
 def get_total_dataframe(df):
     total_dataframe = pd.DataFrame({
     'Ethnicity':['Black', 'Caucasian', 'Mogolian','Others'],
-    'Number of Users':(df.iloc[0]['Black'],
-    df.iloc[0]['Caucasian'], 
-   df.iloc[0]['Mogolian'],df.iloc[0]['Others'])})
+    'Number of Users':
+    (df.loc[0]['Black'],
+    df.loc[0]['Caucasian'], 
+    df.loc[0]['Mogolian'],
+    df.loc[0]['Others'])})
     return total_dataframe
 
 state_total = get_total_dataframe(state_data)
