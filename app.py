@@ -23,11 +23,11 @@ st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
 
-job_filter = st.selectbox("Select the Gender", pd.unique(df['Gender']))
+select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 
 # creating a single-element container.
-placeholder = st.empty()
+select1 = st.empty()
 for seconds in range(1):
 #while True: 
     
