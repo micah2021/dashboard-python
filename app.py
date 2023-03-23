@@ -3,6 +3,9 @@ import numpy as np # np mean, np random
 import pandas as pd # read csv, df manipulation
 import time # to simulate a real time data, time loop 
 import plotly.express as px # interactive charts 
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
 
 # read csv from a github repo
@@ -29,7 +32,12 @@ placeholder = st.empty()
 
 # dataframe filter 
 
+st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=1)
+select = st.sidebar.selectbox('Select a Ethnicity',df['Ethnicity'])
 
+#get the state selected in the selectbox
+state_data = df[df['Ethnicity'] == select]
+select_status = st.sidebar.radio("Users status", ('Black', 'Caucasian', 'Mogolian','Others'))
 
 def get_total_dataframe(df):
     total_dataframe = pd.DataFrame({
