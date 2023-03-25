@@ -33,6 +33,12 @@ select1 = st.empty()
     
    
         # create two columns for charts 
+chart = alt.Chart(data).mark_bar().encode(
+    x=df.Enthicity,
+    y=df.Porn,
+    tooltip=['Ethnicity', 'Porn'],)
+
+st.altair_chart(chart, use_container_width=True)
 
      
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type',('Line Chart', 'Bar Chart', 'Bubble Chart'))
