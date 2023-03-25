@@ -35,22 +35,22 @@ select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 
 # Create a sample data frame with a string column
-df = {'Gender': ['Female', 'Male']}
-df1 = pd.DataFrame(df)
+df1 = df["Gender"]
+df2 = pd.DataFrame(df1)
 
 # Initialize a LabelEncoder object
 le = LabelEncoder()
 
 # Encode the 'color' column
-df1['color_encoded'] = le.fit_transform(pd.unique(df1['Gender']))
+df2['color_encoded'] = le.fit_transform(pd.unique(df2['Gender']))
 
 # Display the results
-print(df1)
+print(df2)
 
 
 #Plot the unique values
 sns.set_style("whitegrid")
-plot=sns.countplot(pd.unique(df1['Gender']))
+plot=sns.countplot(pd.unique(df2['Gender']))
 
 st.pyplot()
 
