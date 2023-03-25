@@ -4,4 +4,4 @@ plotly.express
 streamlit
 matplotlib
 seaborn
-sklearn.preprocessing
+sklearn
