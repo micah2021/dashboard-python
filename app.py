@@ -42,7 +42,7 @@ df1 = pd.DataFrame(df)
 le = LabelEncoder()
 
 # Encode the 'color' column
-df1['color_encoded'] = le.fit_transform(pd.unique(df['Gender']))
+df1['color_encoded'] = le.fit_transform(pd.unique(df1['Gender']))
 
 # Display the results
 print(df1)
