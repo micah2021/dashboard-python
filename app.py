@@ -28,6 +28,15 @@ st.title("Real-Time Lifelight Dashboard")
 # top-level filters 
 
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
+fig, ax = plt.subplots()
+
+# Plot a histogram
+ax.hist(df['Gender'], bins=20)
+# Label
+ax.set(title='A Histogram of App ratings',
+       xlabel='Rating out of 5.0',
+       ylabel='Count')
+plt.show();
 
 
 
