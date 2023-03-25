@@ -5,7 +5,7 @@ import time # to simulate a real time data, time loop
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import altair as alt
 import seaborn as sns
 from sklearn.preprocessing import LabelEncoder
