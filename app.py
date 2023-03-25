@@ -102,7 +102,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 
-            st.markdown("### Detailed Data View")
+        st.markdown("### Detailed Data View")
         st.dataframe(df)
         time.sleep(1)
     #placeholder.empty() 
