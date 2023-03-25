@@ -50,7 +50,7 @@ print(df1)
 
 #Plot the unique values
 sns.set_style("whitegrid")
-plot=sns.countplot(df['Gender']).unique()
+plot=sns.countplot(df['Gender'])
 
 st.pyplot()
 
