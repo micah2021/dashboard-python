@@ -28,6 +28,8 @@ st.title("Real-Time Lifelight Dashboard")
 # top-level filters 
 
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
+
+st.set_option('deprecation.showPyplotGlobalUse', False)
 fig, ax = plt.subplots()
 
 # Plot a histogram
