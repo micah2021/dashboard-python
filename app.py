@@ -59,41 +59,41 @@ if chart_visual == 'Line Chart':
 
 elif chart_visual == 'Bar Chart':
 	if selected_status == 'Black':
-		fig.add_trace(go.Bar(x=df.Ethnicity, y=df.Black,
+		fig.add_trace(go.Bar(x=df.Porn, y=df.Ethnicity,
 							name='Black'))
 	if selected_status == 'Caucasian':
-		fig.add_trace(go.Bar(x=df.Ethnicity, y=df.Caucasian,
+		fig.add_trace(go.Bar(x=df.Porn, y=df.Ethnicity,
 							name='Caucasian'))
 	if selected_status == 'Mogolian':
-		fig.add_trace(go.Bar(x=df.Ethnicity, y=df.Mogolian,
+		fig.add_trace(go.Bar(x=df.Porn, y=df.Ethnicity,
 							name='Mogolian'))
 	if selected_status == 'Others':
-		fig.add_trace(go.Bar(x=df.Ethnicity, y=df.Others,
+		fig.add_trace(go.Bar(x=df.Porn, y=df.Ethnicity,
 							name="Others"))
 
 elif chart_visual == 'Bubble Chart':
 	if selected_status == 'Black':
 		fig.add_trace(go.Scatter(x=df.Person_Nudity,
-								y=df.Black,
+								y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name='Black'))
 		
 	if selected_status == 'Smoked':
-		fig.add_trace(go.Scatter(x=data.Person_Nudity, y=df.Caucasian,
+		fig.add_trace(go.Scatter(x=data.Person_Nudity, y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name='Caucasian'))
 		
 	if selected_status == 'Mogolian':
 		fig.add_trace(go.Scatter(x=df.Person_Nudity,
-								y=df.Mogolian,
+								y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name = 'Mogolian'))
 	if selected_status == 'Others':
 		fig.add_trace(go.Scatter(x=df.Person_Nudity,
-								y=df.Others,
+								y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name="Others"))
