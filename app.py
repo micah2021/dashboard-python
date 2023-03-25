@@ -42,7 +42,7 @@ df1 = pd.DataFrame(df)
 le = LabelEncoder()
 
 # Encode the 'color' column
-df1['color_encoded'] = le.fit_transform(df['Gender'])
+df1['color_encoded'] = le.fit_transform(pd.unique(df['Gender']))
 
 # Display the results
 print(df1)
@@ -50,7 +50,7 @@ print(df1)
 
 #Plot the unique values
 sns.set_style("whitegrid")
-plot=sns.countplot(df['Gender'])
+plot=sns.countplot(pd.unique(df['Gender']))
 
 st.pyplot()
 
