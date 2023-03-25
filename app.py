@@ -35,15 +35,9 @@ for seconds in range(1):
         # create two columns for charts 
 
      
-	
-	
-chart_visual = st.sidebar.selectbox('Select Charts/Plot type',
-							('Line Chart', 'Bar Chart', 'Bubble Chart'))
+chart_visual = st.sidebar.selectbox('Select Charts/Plot type',('Line Chart', 'Bar Chart', 'Bubble Chart'))
 st.sidebar.checkbox("Show Analysis by Users", True, key = 1)
-selected_status = st.sidebar.selectbox('Select Users Status',
-									options = ['Black',
-												'Caucasian', 'Mogolian',
-												'Others'])
+selected_status = st.sidebar.selectbox('Select Users Status',options = ['Black','Caucasian', 'Mogolian','Others'])
 fig = go.Figure()
 
 if chart_visual == 'Line Chart':
