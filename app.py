@@ -27,7 +27,7 @@ st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
 
-st.write(data.info())
+st.write(df.info())
 
 
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
