@@ -42,18 +42,18 @@ fig = go.Figure()
 
 if chart_visual == 'Line Chart':
 	if selected_status == 'Black':
-		fig.add_trace(go.Scatter(x = df.Ethnicity, y = df.Black,
+		fig.add_trace(go.Scatter(x = df.Porn, y = df.Ethnicity,
 								mode = 'lines',
 								name = 'Black'))
 	if selected_status == 'Caucasian':
-		fig.add_trace(go.Scatter(x = df.Ethnicity, y = df.Caucasian,
+		fig.add_trace(go.Scatter(x = df.Porn, y = df.Ethnicity,
 								mode = 'lines', name = 'Caucasian'))
 	if selected_status == 'Mogolian':
-		fig.add_trace(go.Scatter(x = df.Ethnicity, y = df.Mogolian,
+		fig.add_trace(go.Scatter(x = df.Porn, y = df.Ethnicity,
 								mode = 'lines',
 								name = 'Mogolian'))
 	if selected_status == 'Others':   
-		fig.add_trace(go.Scatter(x=df.Ethnicity, y=data.Others,
+		fig.add_trace(go.Scatter(x=df.Porn, y=data.Others,
 								mode='lines',
 								name="Others"))
 
