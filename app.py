@@ -7,7 +7,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 #import matplotlib.pyplot as plt
 import altair as alt
-
+import seaborn as sns
 
 # read csv from a github repo
 df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
@@ -26,6 +26,12 @@ st.title("Real-Time Lifelight Dashboard")
 # top-level filters 
 
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
+
+
+#Plot the unique values
+
+sns.countplot(df['Gender']).unique()
+
 
 
 # creating a single-element container.
