@@ -33,10 +33,10 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 fig, ax = plt.subplots()
 
 # Plot a histogram
-ax.hist(df['Gender'], bins=20)
+ax.hist(df['Gender'], bins=10)
 # Label
-ax.set(title='A Histogram of App ratings',
-       xlabel='Rating out of 5.0',
+ax.set(title='A Histogram of Gender Count',
+       xlabel='Gender',
        ylabel='Count')
 plt.show();
 st.pyplot()
