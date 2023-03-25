@@ -53,7 +53,7 @@ if chart_visual == 'Line Chart':
 								mode = 'lines',
 								name = 'Mogolian'))
 	if selected_status == 'Others':   
-		fig.add_trace(go.Scatter(x=df.Porn, y=data.Others,
+		fig.add_trace(go.Scatter(x=df.Porn, y=df.Ethnicity,
 								mode='lines',
 								name="Others"))
 
