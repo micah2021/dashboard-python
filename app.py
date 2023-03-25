@@ -27,6 +27,9 @@ st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
 
+st.write(data.info())
+
+
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
