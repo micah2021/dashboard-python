@@ -117,8 +117,8 @@ def get_total_dataframe(df):
     (df.iloc[0]['Porn'],
     df.iloc[0]['Neutral'], 
     df.iloc[0]['Sexy'],
-    df.iloc[0]['Drawing'])})
+    df.iloc[0]['Drawing'])})   
     return total_dataframe
 
-state_total = get_total_dataframe(state_data)
+
 
