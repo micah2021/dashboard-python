@@ -33,7 +33,7 @@ select1 = st.empty()
 #for seconds in range(1):
 #while True: 
 desc=df.describe(include="object")
-desc=df.describe(include="number")
+desc1=df.describe(include="number")
 desc
 desc1
      
