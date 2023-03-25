@@ -8,6 +8,8 @@ import plotly.graph_objects as go
 #import matplotlib.pyplot as plt
 import altair as alt
 import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+
 
 # read csv from a github repo
 df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
@@ -26,6 +28,24 @@ st.title("Real-Time Lifelight Dashboard")
 # top-level filters 
 
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
+
+
+
+
+
+
+# Create a sample data frame with a string column
+df = {'Gender': ['Female', 'Male']}
+df1 = pd.DataFrame(df)
+
+# Initialize a LabelEncoder object
+le = LabelEncoder()
+
+# Encode the 'color' column
+df1['color_encoded'] = le.fit_transform(df['Gender])
+
+# Display the results
+print(df1)
 
 
 #Plot the unique values
