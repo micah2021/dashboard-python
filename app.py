@@ -37,7 +37,7 @@ ax.set(title='A Histogram of App ratings',
        xlabel='Rating out of 5.0',
        ylabel='Count')
 sh=plt.show();
-st.bar_chart(sh)
+
 
 
 
