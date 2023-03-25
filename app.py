@@ -32,21 +32,7 @@ select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 select1 = st.empty()
 #for seconds in range(1):
 #while True: 
-    
-   
-        # create two columns for charts 
-chart = alt.Chart(df).mark_arc().encode(
-    x=alt.X('Gender:Q', stack='normalize'),
-    color='Ethnicity:N',
-    tooltip=['Gender:N', 'Ethnicity:Q']
-).properties(
-    width=500,
-    height=500
-).configure_arc(
-    strokeWidth=2
-)
-
-st.altair_chart(chart, use_container_width=True)
+df.describe()
 
      
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type',('Line Chart', 'Bar Chart', 'Bubble Chart'))
