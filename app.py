@@ -35,10 +35,16 @@ select1 = st.empty()
     
    
         # create two columns for charts 
-chart = alt.Chart(df).mark_bar().encode(
-    x="Gender",
-    y="Ethnicity",
-    tooltip=['Ethnicity', 'Porn'],)
+chart = alt.Chart(df).mark_arc().encode(
+    x=alt.X('Ethnicity:Q', stack='normalize'),
+    color='Porn:N',
+    tooltip=['Porn:N', 'Ethnicity:Q']
+).properties(
+    width=500,
+    height=500
+).configure_arc(
+    strokeWidth=2
+)
 
 st.altair_chart(chart, use_container_width=True)
 
