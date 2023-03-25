@@ -30,7 +30,7 @@ select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 #Plot the unique values
 
-sns.countplot(df['Ethnicity']).unique()
+sns.countplot(df['Porn']).unique()
 
 
 
