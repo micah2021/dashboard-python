@@ -36,8 +36,8 @@ select1 = st.empty()
    
         # create two columns for charts 
 chart = alt.Chart(df).mark_bar().encode(
-    x=df.Gender,
-    y=df.Porn,
+    x=df["Gender"],
+    y=df["Porn"],
     tooltip=['Ethnicity', 'Porn'],)
 
 st.altair_chart(chart, use_container_width=True)
