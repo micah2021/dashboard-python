@@ -38,7 +38,7 @@ ax.set(title='A Histogram of App ratings',
        ylabel='Count')
 show=plt.show();
 
-show
+st.show
 
 
 
