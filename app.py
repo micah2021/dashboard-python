@@ -32,7 +32,7 @@ select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 select1 = st.empty()
 #for seconds in range(1):
 #while True: 
-desc=df.info(include='all')
+desc=df.info()
 desc
      
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type',('Line Chart', 'Bar Chart', 'Bubble Chart'))
