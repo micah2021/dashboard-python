@@ -28,7 +28,7 @@ select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 # creating a single-element container.
 select1 = st.empty()
-for seconds in range(1):
+#for seconds in range(1):
 #while True: 
     
    
