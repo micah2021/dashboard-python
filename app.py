@@ -6,6 +6,8 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 #import matplotlib.pyplot as plt
+import altair as alt
+
 
 # read csv from a github repo
 df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
@@ -18,7 +20,7 @@ st.set_page_config(
 )
 
 # dashboard title
-
+   
 st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
