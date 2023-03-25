@@ -37,8 +37,8 @@ select1 = st.empty()
         # create two columns for charts 
 chart = alt.Chart(df).mark_arc().encode(
     x=alt.X('Ethnicity:Q', stack='normalize'),
-    color='Porn:N',
-    tooltip=['Porn:N', 'Ethnicity:Q']
+    color='Gender:N',
+    tooltip=['Gender:N', 'Ethnicity:Q']
 ).properties(
     width=500,
     height=500
