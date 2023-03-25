@@ -36,7 +36,8 @@ ax.hist(df['Gender'], bins=20)
 ax.set(title='A Histogram of App ratings',
        xlabel='Rating out of 5.0',
        ylabel='Count')
-show();
+plt.show();
+st.pyplot()
 
 
 
