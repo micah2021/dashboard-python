@@ -41,7 +41,7 @@ ax.set(title='A Histogram of Gender Count',
 plt.show();
 st.pyplot()
 fig1, ax1 = plt.subplots()
-ax1.hist(df['Ethnicity'], bins=3)
+ax1.hist(df['Ethnicity'], bins=5)
 # Label
 ax1.set(title='A Histogram of Ethnicity Count',
        xlabel='Ethnicity',
