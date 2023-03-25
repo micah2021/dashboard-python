@@ -35,7 +35,7 @@ select1 = st.empty()
     
    
         # create two columns for charts 
-chart = alt.Chart(data).mark_bar().encode(
+chart = alt.Chart(df).mark_bar().encode(
     x=df.Enthicity,
     y=df.Porn,
     tooltip=['Ethnicity', 'Porn'],)
