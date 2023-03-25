@@ -99,12 +99,9 @@ elif chart_visual == 'Bubble Chart':
 								name="Others"))
 
 st.plotly_chart(fig, use_container_width=True)
-
-
-
-        st.markdown("### Detailed Data View")
-        st.dataframe(df)
-        time.sleep(1)
+st.markdown("### Detailed Data View")
+st.dataframe(df)
+time.sleep(1)
     #placeholder.empty() 
 
 
