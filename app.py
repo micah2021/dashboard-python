@@ -30,7 +30,7 @@ st.title("Real-Time Lifelight Dashboard")
 sh=df.shape
 st.write("The shape of datasets", sh)
 cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
-st.write(cross)
+st.write("The is the cross table for Ethnicity with Porn", cross)
 
 
 
