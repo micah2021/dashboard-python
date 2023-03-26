@@ -49,7 +49,7 @@ ax1.set(title='A Histogram of Ethnicity Count',
        xlabel='Ethnicity',
        ylabel='Count')
 plt.show();
-st.pyplot()
+
 
 
 
