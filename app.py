@@ -128,7 +128,7 @@ if chart_visual == 'Line Chart':
 								mode='markers',
 								name="Others"))
 
-elif chart_visual == 'Bar Chart':
+
 	
 	
 	
