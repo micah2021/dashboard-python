@@ -137,33 +137,33 @@ fig = go.Figure()
 
 if chart_visual == 'Line Chart':
 	if selected_status == 'Black':
-		fig.add_trace(go.Scatter(x = df["Porn (%)], y = df.Ethnicity,
+		fig.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
 								mode = 'lines',
 								name = 'Black'))
 	if selected_status == 'Caucasian':
-		fig.add_trace(go.Scatter(x = df["Porn (%)], y = df.Ethnicity,
+		fig.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
 								mode = 'lines', name = 'Caucasian'))
 	if selected_status == 'Mogolian':
-		fig.add_trace(go.Scatter(x = df["Porn (%)], y = df.Ethnicity,
+		fig.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
 								mode = 'lines',
 								name = 'Mogolian'))
 	if selected_status == 'Others':   
-		fig.add_trace(go.Scatter(x=df["Porn (%)], y=df.Ethnicity,
+		fig.add_trace(go.Scatter(x=df["Porn (%)"], y=df.Ethnicity,
 								mode='lines',
 								name="Others"))
 
 elif chart_visual == 'Bar Chart':
 	if selected_status == 'Black':
-		fig.add_trace(go.Bar(x=df["Porn (%)], y=df.Ethnicity,
+		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name='Black'))
 	if selected_status == 'Caucasian':
-		fig.add_trace(go.Bar(x=df["Porn (%)], y=df.Ethnicity,
+		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name='Caucasian'))
 	if selected_status == 'Mogolian':
-		fig.add_trace(go.Bar(x=df["Porn (%)], y=df.Ethnicity,
+		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name='Mogolian'))
 	if selected_status == 'Others':
-		fig.add_trace(go.Bar(x=df["Porn (%)], y=df.Ethnicity,
+		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name="Others"))
 
 elif chart_visual == 'Bubble Chart':
