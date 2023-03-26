@@ -68,6 +68,7 @@ st.pyplot()
 select1 = st.empty()
 #for seconds in range(1):
 #while True: 
+st.header("The is summary of the datasets")
 desc=df.describe(include=["bool","object"])
 desc1=df.describe(include="number")
 desc
