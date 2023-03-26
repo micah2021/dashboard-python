@@ -27,13 +27,6 @@ st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
 
-sh=df.shape
-st.write("The shape of datasets", sh)
-cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
-st.write("The is the cross table for Ethnicity with Porn", cross)
-
-select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
-
 
 labels = ['Female', 'Male']
 
@@ -46,6 +39,29 @@ ax3.axis('equal')
 
 # Display the chart using Streamlit
 st.pyplot(fig)
+
+
+
+subset = df.loc[df['Ethnicity'] == 'Others']
+fig1, ax4 = plt.subplots()
+
+sns.distplot(subset["Porn (%)"], color='red')
+ax4.set_title('Distribution of Total Porns')
+
+# Display the plot using Streamlit
+st.pyplot(fig1)
+
+
+
+sh=df.shape
+st.write("The shape of datasets", sh)
+cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
+st.write("The is the cross table for Ethnicity with Porn", cross)
+
+select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
+
+
+
 
 
 
