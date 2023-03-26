@@ -133,67 +133,67 @@ desc1
 chart_visual = st.sidebar.selectbox('Select Charts/Plot type',('Line Chart', 'Bar Chart', 'Bubble Chart'))
 st.sidebar.checkbox("Show Analysis by Users", True, key = 1)
 selected_status = st.sidebar.selectbox('Select Users Status',options = ['Black','Caucasian', 'Mogolian','Others'])
-fig = go.Figure()
+fig5 = go.Figure()
 
 if chart_visual == 'Line Chart':
 	if selected_status == 'Black':
-		fig.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
+		fig5.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
 								mode = 'lines',
 								name = 'Black'))
 	if selected_status == 'Caucasian':
-		fig.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
+		fig5.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
 								mode = 'lines', name = 'Caucasian'))
 	if selected_status == 'Mogolian':
-		fig.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
+		fig5.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
 								mode = 'lines',
 								name = 'Mogolian'))
 	if selected_status == 'Others':   
-		fig.add_trace(go.Scatter(x=df["Porn (%)"], y=df.Ethnicity,
+		fig5.add_trace(go.Scatter(x=df["Porn (%)"], y=df.Ethnicity,
 								mode='lines',
 								name="Others"))
 
 elif chart_visual == 'Bar Chart':
 	if selected_status == 'Black':
-		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name='Black'))
 	if selected_status == 'Caucasian':
-		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name='Caucasian'))
 	if selected_status == 'Mogolian':
-		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name='Mogolian'))
 	if selected_status == 'Others':
-		fig.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
 							name="Others"))
 
 elif chart_visual == 'Bubble Chart':
 	if selected_status == 'Black':
-		fig.add_trace(go.Scatter(x=df.Person_Nudity,
+		fig5.add_trace(go.Scatter(x=df.Person_Nudity,
 								y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name='Black'))
 		
 	if selected_status == 'Smoked':
-		fig.add_trace(go.Scatter(x=data.Person_Nudity, y=df.Ethnicity,
+		fig5.add_trace(go.Scatter(x=data.Person_Nudity, y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name='Caucasian'))
 		
 	if selected_status == 'Mogolian':
-		fig.add_trace(go.Scatter(x=df.Person_Nudity,
+		fig5.add_trace(go.Scatter(x=df.Person_Nudity,
 								y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name = 'Mogolian'))
 	if selected_status == 'Others':
-		fig.add_trace(go.Scatter(x=df.Person_Nudity,
+		fig5.add_trace(go.Scatter(x=df.Person_Nudity,
 								y=df.Ethnicity,
 								mode='markers',
 								marker_size=[40, 60, 80, 60, 40, 50],
 								name="Others"))
 
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig5, use_container_width=True)
 st.markdown("### Detailed Data View")
 st.dataframe(df)
 time.sleep(1)
