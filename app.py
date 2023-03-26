@@ -203,17 +203,7 @@ time.sleep(1)
        
 
 # dataframe filter 
-st.sidebar.checkbox("Show Analysis by Ethnicity", True, key=2)
-select = st.sidebar.selectbox('Select a Ethnicity',pd.unique(df['Ethnicity']))  
-def get_total_dataframe(df):
-    total_dataframe = pd.DataFrame({
-    'Ethnicity':['Black', 'Caucasian', 'Mogolian','Others'],
-    'Number of Users':
-    (df.iloc[0]['Porn'],
-    df.iloc[0]['Neutral'], 
-    df.iloc[0]['Sexy'],
-    df.iloc[0]['Drawing'])})   
-    return total_dataframe
+
 
 
 
