@@ -130,21 +130,18 @@ if chart_visual == 'Line Chart':
 
 elif chart_visual == 'Bar Chart':
 	if selected_status == 'Black':
-		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green'),
-							name='Black'))
+		fig = go.Figure(data=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig.update_layout(title='Random Box Plot', xaxis_title='Black')
+
 	if selected_status == 'Caucasian':		
-		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green'),
-							name='Caucasian'))
+		fig = go.Figure(data=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig.update_layout(title='Random Box Plot', xaxis_title='Caucasian')
 	if selected_status == 'Mogolian':
-		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green'),
-							name='Mogolian'))
+		fig = go.Figure(data=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig.update_layout(title='Random Box Plot', xaxis_title='Mogolian')
 	if selected_status == 'Others':
-		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green'),
-							name="Others"))
+		fig = go.Figure(data=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig.update_layout(title='Random Box Plot', xaxis_title='Others')
 
 elif chart_visual == 'Bubble Chart':
 	if selected_status == 'Black':
