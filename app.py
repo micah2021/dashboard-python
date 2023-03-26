@@ -27,7 +27,7 @@ st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
 sh=df.shape
-st.write("#The shape of datasets #", sh)
+st.write("# The shape of datasets ", sh)
 
 
 labels = ['Female', 'Male']
