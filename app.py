@@ -26,12 +26,13 @@ st.set_page_config(
 st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
+sh=df.shape
+st.write("The shape of datasets", sh)
 
 
 labels = ['Female', 'Male']
 
 sizes =df['Gender'].value_counts()
-
 # Create the pie chart using matplotlib
 fig, ax3 = plt.subplots()
 ax3.pie(sizes, labels=labels, autopct='%1.1f%%')
@@ -39,6 +40,34 @@ ax3.axis('equal')
 
 # Display the chart using Streamlit
 st.pyplot(fig)
+
+
+
+fig1, ax1 = plt.subplots()
+ax1.hist(df['Ethnicity'], bins=5)
+# Label
+ax1.set(title='A Histogram of Ethnicity Count',
+       xlabel='Ethnicity',
+       ylabel='Count')
+plt.show();
+st.pyplot()
+
+
+
+
+subset = df.loc[df['Ethnicity']=="Others"]
+fig2, ax4 = plt.subplots()
+
+sns.distplot(subset["Porn (%)"], color='red')
+ax4.set_title('Distribution of Total Others Races with Porn')
+
+# Display the plot using Streamlit
+st.pyplot(fig2)
+
+
+
+
+
 
 
 g = sns.FacetGrid(data=df, col='Ethnicity', col_wrap=2, height=5)
@@ -59,19 +88,11 @@ st.pyplot(g.fig)
 
 
 
-subset = df.loc[df['Ethnicity']=="Others"]
-fig1, ax4 = plt.subplots()
-
-sns.distplot(subset["Porn (%)"], color='red')
-ax4.set_title('Distribution of Total Black Races with Porn')
-
-# Display the plot using Streamlit
-st.pyplot(fig1)
 
 
 
-sh=df.shape
-st.write("The shape of datasets", sh)
+
+
 cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
 st.write("The is the cross table for Ethnicity with Porn", cross)
 
@@ -87,21 +108,8 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 fig, ax = plt.subplots()
 
 # Plot a histogram
-ax.hist(df['Gender'], bins=5)
-# Label
-ax.set(title='A Histogram of Gender Count',
-       xlabel='Gender',
-       ylabel='Count')
-plt.show();
-st.pyplot()
-fig1, ax1 = plt.subplots()
-ax1.hist(df['Ethnicity'], bins=5)
-# Label
-ax1.set(title='A Histogram of Ethnicity Count',
-       xlabel='Ethnicity',
-       ylabel='Count')
-plt.show();
-st.pyplot()
+
+
 
 
 
