@@ -26,8 +26,9 @@ st.set_page_config(
 st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
+
 sh=df.shape
-st.write(sh)
+st.write("The shape of datasets", sh)
 cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
 st.write(cross)
 
