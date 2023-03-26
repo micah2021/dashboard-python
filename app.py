@@ -95,7 +95,7 @@ st.pyplot(g.fig)
 
 
 cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
-st.write("# The is the cross table for Ethnicity with Porn", cross)
+st.write("## The is the cross table for Ethnicity with Porn", cross)
 
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
@@ -138,18 +138,18 @@ fig5 = go.Figure()
 if chart_visual == 'Line Chart':
 	if selected_status == 'Black':
 		fig5.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
-								mode = 'lines',
+								mode = 'markers',
 								name = 'Black'))
 	if selected_status == 'Caucasian':
 		fig5.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
-								mode = 'lines', name = 'Caucasian'))
+								mode = 'markers', name = 'Caucasian'))
 	if selected_status == 'Mogolian':
 		fig5.add_trace(go.Scatter(x = df["Porn (%)"], y = df.Ethnicity,
-								mode = 'lines',
+								mode = 'markers',
 								name = 'Mogolian'))
 	if selected_status == 'Others':   
 		fig5.add_trace(go.Scatter(x=df["Porn (%)"], y=df.Ethnicity,
-								mode='lines',
+								mode='markers',
 								name="Others"))
 
 elif chart_visual == 'Bar Chart':
