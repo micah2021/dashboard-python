@@ -130,17 +130,17 @@ if chart_visual == 'Line Chart':
 
 elif chart_visual == 'Bar Chart':
 	if selected_status == 'Black':
-		fig = go.Figure(df=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig = go.Figure(df=go.Box(y=df["Porn (%)"]["Drawing"], boxpoints='outliers', orientation='h'))
 		fig.update_layout(title='Random Box Plot', xaxis_title='Black')
 
 	if selected_status == 'Caucasian':		
-		fig = go.Figure(df=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig = go.Figure(df=go.Box(y=df["Porn (%)"]["Drawing"], boxpoints='outliers', orientation='h'))
 		fig.update_layout(title='Random Box Plot', xaxis_title='Caucasian')
 	if selected_status == 'Mogolian':
-		fig = go.Figure(df=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig = go.Figure(df=go.Box(y=df["Porn (%)"]["Drawing"], boxpoints='outliers', orientation='h'))
 		fig.update_layout(title='Random Box Plot', xaxis_title='Mogolian')
 	if selected_status == 'Others':
-		fig = go.Figure(df=go.Box(y=df, boxpoints='outliers', orientation='h'))
+		fig = go.Figure(df=go.Box(y=df["Porn (%)"]["Drawing"], boxpoints='outliers', orientation='h'))
 		fig.update_layout(title='Random Box Plot', xaxis_title='Others')
 
 elif chart_visual == 'Bubble Chart':
