@@ -32,9 +32,22 @@ st.write("The shape of datasets", sh)
 cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
 st.write("The is the cross table for Ethnicity with Porn", cross)
 
-
-
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
+
+
+labels = ['Female', 'Male']
+sizes = [countf = df['Female'].value_counts(), countm = df['Male'].value_counts()]
+
+# Create the pie chart using matplotlib
+fig, ax3 = plt.subplots()
+ax3.pie(sizes, labels=labels, autopct='%1.1f%%')
+ax3.axis('equal')
+
+# Display the chart using Streamlit
+st.pyplot(fig)
+
+
+
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 fig, ax = plt.subplots()
