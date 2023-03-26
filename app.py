@@ -42,7 +42,7 @@ st.pyplot(fig)
 
 
 
-subset = df.loc[df['Ethnicity'] == 'Others']
+subset = df.loc[df['Ethnicity']
 fig1, ax4 = plt.subplots()
 
 sns.distplot(subset["Porn (%)"], color='red')
