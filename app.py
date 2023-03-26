@@ -44,7 +44,7 @@ st.pyplot(fig)
 g = sns.FacetGrid(data=df, col='Ethnicity', col_wrap=2, height=5)
 
 # Map a bar plot of the 'total_bill' column to each subplot
-g.map(sns.barplot, 'Drawing (%)', 'Porn (%)')
+g.map(sns.barplot, 'Porn (%)', 'Drawing (%)')
 
 # Set the title of each subplot
 for ax in g.axes.flat:
