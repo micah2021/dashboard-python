@@ -26,10 +26,13 @@ st.set_page_config(
 st.title("Real-Time Lifelight Dashboard")
 
 # top-level filters 
-
-st.write(df.info())
+sh=df.shape
+st.write(sh)
 cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
 st.write(cross)
+
+
+
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
