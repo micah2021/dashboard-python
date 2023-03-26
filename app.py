@@ -85,40 +85,16 @@ st.pyplot(g.fig)
 
 
 
-
-
-
-
-
-
-
-
-
 cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
 st.write("## The is the cross table for Ethnicity with Porn", cross)
 
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 
-
-
-
-
-
 st.set_option('deprecation.showPyplotGlobalUse', False)
 fig, ax = plt.subplots()
 
 # Plot a histogram
-
-
-
-
-
-
-
-# Create a sample data frame with a string column
-
-
 
 # creating a single-element container.
 select1 = st.empty()
@@ -155,15 +131,19 @@ if chart_visual == 'Line Chart':
 elif chart_visual == 'Bar Chart':
 	if selected_status == 'Black':
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+				      			marker=dict(color='green')
 							name='Black'))
-	if selected_status == 'Caucasian':
+	if selected_status == 'Caucasian':		
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+				      			marker=dict(color='green')
 							name='Caucasian'))
 	if selected_status == 'Mogolian':
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+				      			marker=dict(color='green')
 							name='Mogolian'))
 	if selected_status == 'Others':
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
+				      			marker=dict(color='green')
 							name="Others"))
 
 elif chart_visual == 'Bubble Chart':
