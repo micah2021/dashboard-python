@@ -131,19 +131,19 @@ if chart_visual == 'Line Chart':
 elif chart_visual == 'Bar Chart':
 	if selected_status == 'Black':
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green')
+				      			marker=dict(color='green'),
 							name='Black'))
 	if selected_status == 'Caucasian':		
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green')
+				      			marker=dict(color='green'),
 							name='Caucasian'))
 	if selected_status == 'Mogolian':
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green')
+				      			marker=dict(color='green'),
 							name='Mogolian'))
 	if selected_status == 'Others':
 		fig5.add_trace(go.Bar(x=df["Porn (%)"], y=df.Ethnicity,
-				      			marker=dict(color='green')
+				      			marker=dict(color='green'),
 							name="Others"))
 
 elif chart_visual == 'Bubble Chart':
