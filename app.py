@@ -41,8 +41,25 @@ ax3.axis('equal')
 st.pyplot(fig)
 
 
+g = sns.FacetGrid(data=df, col='Porn (%)', col_wrap=2, height=5)
 
-subset = df.loc[df['Ethnicity']=="Black"]
+# Map a bar plot of the 'total_bill' column to each subplot
+g.map(sns.barplot, 'Gender ', 'Ethnicity')
+
+# Set the title of each subplot
+for ax in g.axes.flat:
+    ax.set_title(f"Show of Porn by Gener and Ethnicity({ax.get_title()})")
+
+# Display the plot using Streamlit
+st.pyplot(g.fig)
+
+
+
+
+
+
+
+subset = df.loc[df['Ethnicity']=="Others"]
 fig1, ax4 = plt.subplots()
 
 sns.distplot(subset["Porn (%)"], color='red')
