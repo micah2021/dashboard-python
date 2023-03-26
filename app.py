@@ -78,7 +78,7 @@ g.map(sns.barplot, 'Porn (%)', 'Drawing (%)')
 
 # Set the title of each subplot
 for ax in g.axes.flat:
-    ax.set_title(f"Show of Porn by Gender and Ethnicity({ax.get_title()})")
+    ax.set_title(f"Porn by Gender and Ethnicity({ax.get_title()})")
 
 # Display the plot using Streamlit
 st.pyplot(g.fig)
