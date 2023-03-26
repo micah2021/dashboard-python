@@ -36,7 +36,9 @@ select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
 
 
 labels = ['Female', 'Male']
-sizes = [countf = df['Female'].value_counts(), countm = df['Male'].value_counts()]
+countf = df['Female'].value_counts()
+countm = df['Male'].value_counts()
+sizes = [countf,countm]
 
 # Create the pie chart using matplotlib
 fig, ax3 = plt.subplots()
