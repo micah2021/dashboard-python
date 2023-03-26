@@ -40,7 +40,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 fig, ax = plt.subplots()
 
 # Plot a histogram
-ax.hist(df['Gender'], bins=5 hue=df.Gender)
+ax.hist(df['Gender'], bins=5,hue=df.Gender)
 # Label
 ax.set(title='A Histogram of Gender Count',
        xlabel='Gender',
