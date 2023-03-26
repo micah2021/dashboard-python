@@ -63,7 +63,7 @@ ax4.set_title('Distribution of Total Others Races with Porn')
 # Display the plot using Streamlit
 
 
-col3, col2, col1= st.columns(3)
+col1, col2, col3= st.columns(3)
 col1.pyplot(fig)
 col2.pyplot(fig1)
 col3.pyplot(fig2)
