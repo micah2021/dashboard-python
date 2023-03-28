@@ -34,7 +34,7 @@ def app():
 	st.title("Real-Time Lifelight Dashboard")
 	sh=df.shape
 	if st.button('Check Shape'):
-    		st.write('# The shape of datasets ", sh)
+    		st.write('# The shape of datasets ', sh)
 	else:
     		st.write('No update of datasets yet')
 # top-level filters 
