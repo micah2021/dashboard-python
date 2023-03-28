@@ -105,7 +105,7 @@ def app():
 	fig, ax = plt.subplots()
 
 # Plot a histogram
-	st.map(df)
+	
 # creating a single-element container.
 	select1 = st.empty()
 #for seconds in range(1):
