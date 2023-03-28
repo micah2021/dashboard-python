@@ -172,7 +172,7 @@ def app():
 	st.plotly_chart(fig5, use_container_width=True)
 	st.markdown("### Detailed Data View")
 	st.dataframe(df)
-	time.sleep(1)
+	
 	def convert_df(df):
    		 # IMPORTANT: Cache the conversion to prevent computation on every rerun
     		return df.to_csv().encode('utf-8')
