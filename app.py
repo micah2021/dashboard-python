@@ -177,7 +177,7 @@ def app():
        
 while True:
     app()
-    time.sleep(60)
+    time.sleep(10)
 # dataframe filter 
 
 
