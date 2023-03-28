@@ -13,8 +13,8 @@ from sklearn.preprocessing import LabelEncoder
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-SCOPES = ['https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv']
-SERVICE_ACCOUNT_FILE = 'path/to/service_account.json'
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+SERVICE_ACCOUNT_FILE = 'googleapi.json'
 
 creds = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
