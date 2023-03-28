@@ -10,6 +10,17 @@ import altair as alt
 import seaborn as sns
 from sklearn.preprocessing import LabelEncoder
 
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+SERVICE_ACCOUNT_FILE = 'path/to/service_account.json'
+
+creds = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
+service = build('sheets', 'v4', credentials=creds)
+
 
 # read csv from a github repo
 df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
