@@ -29,7 +29,7 @@ df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_
 st.set_page_config(
     page_title = 'Lifelight Dashboard',
     page_icon = '✅',
-    layout = 'wide'
+    layout = 'wide' 
 )
 
 # dashboard title
