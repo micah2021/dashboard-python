@@ -13,14 +13,12 @@ from sklearn.preprocessing import LabelEncoder
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = 'serviceaccountfile.json'
-SAMPLE_SPREADSHEET_ID = '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
-creds = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+st.cache_data(ttl=600)
+def load_data(sheets_url):
+    csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
+    return pd.read_csv(csv_url)
 
-service = build('sheets', 'v4', credentials=creds)
-
+df = load_data(st.secrets["public_gsheets_url"])
 
 # read csv from a github repo
 df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
