@@ -32,14 +32,13 @@ def app():
 # dashboard title
    
 	st.title("Real-Time Lifelight Dashboard")
-	if st.button('Hello'):
-    		st.write('Why hello there')
-	else:
-    		st.write('Goodbye')
-# top-level filters 
 	sh=df.shape
-	st.write("# The shape of datasets ", sh)
-
+	if st.button('Check Shape'):
+    		st.write('# The shape of datasets ", sh)
+	else:
+    		st.write('No update of datasets yet')
+# top-level filters 
+	
 
 	labels = ['Female', 'Male']
 
