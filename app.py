@@ -89,7 +89,7 @@ def app():
     		ax.set_title(f"Porn by Gender and Ethnicity({ax.get_title()})")
 
 # Display the plot using Streamlit
-		st.pyplot(g.fig)
+	st.pyplot(g.fig)
 
 
 
