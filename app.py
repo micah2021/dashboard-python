@@ -173,6 +173,17 @@ def app():
 	st.markdown("### Detailed Data View")
 	st.dataframe(df)
 	time.sleep(1)
+	def convert_df(df):
+   		 # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    		return df.to_csv().encode('utf-8')
+	csv = convert_dfdf)
+
+	st.download_button(
+   		label="Download data as CSV",
+    		data=csv,
+    		file_name='lifelight.csv',
+    		mime='text/csv',
+			)
     #placeholder.empty() 
 
 
