@@ -32,7 +32,10 @@ def app():
 # dashboard title
    
 	st.title("Real-Time Lifelight Dashboard")
-
+	if st.button('Hello'):
+    		st.write('Why hello there')
+	else:
+    		st.write('Goodbye')
 # top-level filters 
 	sh=df.shape
 	st.write("# The shape of datasets ", sh)
@@ -103,7 +106,7 @@ def app():
 	fig, ax = plt.subplots()
 
 # Plot a histogram
-
+	st.map(df)
 # creating a single-element container.
 	select1 = st.empty()
 #for seconds in range(1):
