@@ -176,7 +176,9 @@ time.sleep(1)
 
 
        
-
+while True:
+    app()
+    time.sleep(60)
 # dataframe filter 
 
 
