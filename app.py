@@ -12,6 +12,8 @@ from sklearn.preprocessing import LabelEncoder
 import json
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
+from PIL import Image
+
 
 st.cache_data(ttl=600)
 def load_data(sheets_url):
@@ -39,7 +41,11 @@ def app():
     		st.write('No update of datasets yet')
 # top-level filters 
 	
+	
 
+	image = Image.open('Download/lifelight.jpg')
+	st.image(image, caption='Lifelight logo goes here')
+	
 	labels = ['Female', 'Male']
 
 	sizes =df['Gender'].value_counts()
@@ -50,8 +56,6 @@ def app():
 
 # Display the chart using Streamlit
 
-
-
 	fig1, ax1 = plt.subplots()
 	ax1.hist(df['Ethnicity'], bins=5)
 # Label
@@ -59,10 +63,6 @@ def app():
      	xlabel='Ethnicity',
      	ylabel='Count')
 	plt.show();
-
-
-
-
 
 	subset = df.loc[df['Ethnicity']=="Others"]
 	fig2, ax4 = plt.subplots()
