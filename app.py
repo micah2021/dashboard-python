@@ -44,7 +44,7 @@ def app():
 	
 
 	image = Image.open('lifelight.jpeg')
-	st.image(image, caption='Lifelight logo goes here',width='30px', use_column_width='40px')
+	st.image(image, caption='Lifelight logo goes here',width='10%', use_column_width='20%')
 	
 	labels = ['Female', 'Male']
 
