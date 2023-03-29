@@ -30,9 +30,6 @@ def app():
     	page_icon = '✅',
     	layout = 'wide' 
 			)
-	image = Image.open('lifelight.jpeg')
-	resized_image = image.resize((int(image.size[0]/14), int(image.size[1]/14)))
-	st.image(resized_image, caption='Lifelight logo goes here', use_column_width='True')
 	
 # dashboard title
    
@@ -100,6 +97,9 @@ def app():
 	st.write("## The is the cross table for Ethnicity with Porn", cross)
 
 	select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
+	image = Image.open('lifelight.jpeg')
+	resized_image = image.resize((int(image.size[0]/14), int(image.size[1]/14)))
+	st.image(resized_image, caption='Lifelight logo goes here', use_column_width='True')
 	
 
 	st.set_option('deprecation.showPyplotGlobalUse', False)
