@@ -45,9 +45,6 @@ def app():
 	
 	
 	labels = ['Female', 'Male']
-	image = Image.open('lifelight.jpeg')
-	resized_image = image.resize((int(image.size[0]/14), int(image.size[1]/14)))
-	st.image(resized_image, caption='Lifelight logo goes here', use_column_width='True')
 	
 
 	sizes =df['Gender'].value_counts()
