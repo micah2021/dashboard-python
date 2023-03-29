@@ -42,7 +42,7 @@ def app():
 # top-level filters 
 	
 	
-image = Image.open('lifelight.jpeg')
+	image = Image.open('lifelight.jpeg')
 	resized_image = image.resize((int(image.size[0]/10), int(image.size[1]/10)))
 	st.image(resized_image, caption='Lifelight logo goes here', use_column_width='True')
 	
