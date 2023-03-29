@@ -43,7 +43,7 @@ def app():
 	
 	
 
-	image = Image.open('Download/lifelight.jpg')
+	image = Image.open('lifelight.jpeg')
 	st.image(image, caption='Lifelight logo goes here')
 	
 	labels = ['Female', 'Male']
