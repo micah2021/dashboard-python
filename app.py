@@ -13,7 +13,7 @@ import json
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from PIL import Image
-
+import os
 
 st.cache_data(ttl=600)
 def load_data(sheets_url):
