@@ -20,40 +20,6 @@ def load_data(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
     return pd.read_csv(csv_url)
 
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = os.path.abspath("servicefile.json")
-
-
-# Authenticate with Google Sheets API
-creds = None
-creds = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-
-# Build the Google Sheets API client
-service = build('sheets', 'v4', credentials=creds)
-
-# Get the data from a specific Google Sheet
-sheet_id = '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
-
-result = service.spreadsheets().values().get(
-    spreadsheetId=sheet_id).execute()
-data = result.get()
-if data:
-    df = pd.DataFrame(data, columns=['Col1', 'Col2', 'Col3'])
-    st.dataframe(df)
-else:
-    st.write('No data found.')
-
-
-
-
-
-
-
-
-
-
-
 
 def app():
 # read csv from a github repo
