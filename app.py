@@ -21,7 +21,7 @@ def load_data(sheets_url):
     return pd.read_csv(csv_url)
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = 'account.json'
+SERVICE_ACCOUNT_FILE = 'main/dashboard-python/serviceaccountfile.json'
 
 # Authenticate with Google Sheets API
 creds = None
