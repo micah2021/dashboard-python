@@ -24,9 +24,8 @@ SAMPLE_SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 service=build("sheets", "v4", credentials=creds)
 
 sheet=service.spreadsheets()
-data = sheet.get_all_values()
-data = sheet.get_all_values()
-st.table(data)
+
+st.table(sheet)
 
 st.cache_data(ttl=600)
 def load_data(sheets_url):
