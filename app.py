@@ -34,7 +34,7 @@ df= pd.DataFrame(data[1:], columns=data[0])
 
 
 # read csv from a github repo
-	#df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
+#df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
 	
 st.set_page_config(
 page_title = 'Lifelight Dashboard',
@@ -52,9 +52,7 @@ else:
 # top-level filters 
 	
 	
-	
-	
-labels = ['Female', 'Male']
+select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))	
 	
 
 sizes =df['Gender'].value_counts()
@@ -76,7 +74,7 @@ plt.show();
 subset = df.loc[df['Ethnicity']=="Others"]
 fig2, ax4 = plt.subplots()
 
-sns.displot(subset["Porn (%)"], color='red')
+sns.distplot(subset["Porn (%)"], color='red')
 ax4.set_title('Distribution of Total Others Races with Porn')
 
 # Display the plot using Streamlit
@@ -88,6 +86,8 @@ col2.pyplot(fig1)
 col3.pyplot(fig2)
 
 
+cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
+st.write("## The is the cross table for Ethnicity with Porn", cross)
 
 
 g = sns.FacetGrid(data=df, col='Ethnicity', col_wrap=2, height=5)
@@ -100,17 +100,9 @@ for ax in g.axes.flat:
     	ax.set_title(f"Porn by Gender and Ethnicity({ax.get_title()})")
 
 # Display the plot using Streamlit
-st.pyplot(g.fig)
-
-
-
-cross=pd.crosstab(df['Ethnicity'], df['Porn (%)'])
-st.write("## The is the cross table for Ethnicity with Porn", cross)
-
-select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))
-	
+st.pyplot(g.fig)	
 st.set_option('deprecation.showPyplotGlobalUse', False)
-fig, ax = plt.subplots()
+fig1, ax = plt.subplots()
 
 # Plot a histogram
 	
