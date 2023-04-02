@@ -21,8 +21,18 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 creds=None
 creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
-
 service=build("sheets", "v4", credentials=creds)
+
+workbook = client.open('your-workbook-name')
+
+# Open a specific sheet in the workbook
+sheet = workbook.worksheet('your-sheet-name')
+
+# Get all the cell values in the sheet
+data = sheet.get_all_values()
+df= pd.DataFrame(data)
+
+""""
 result = service.spreadsheets().values().get(
     spreadsheetId=SPREADSHEET_ID).execute()
 
@@ -31,7 +41,7 @@ data = result.get('values', [])
 df= pd.DataFrame(data[1:], columns=data[0])
 
 
-
+""""
 
 # read csv from a github repo
 #df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
