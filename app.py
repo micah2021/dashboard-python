@@ -67,6 +67,38 @@ elif filter_sex == 'Male':
 else:
 	dfemale=df['Gender'].value_counts()
 
+labels = ['Male', 'Female']
+values = df['Gender'].value_counts()
+is_highlighted = [True, False]
+is_outlined = [False, True]
 
+# Define the colors for each combination of binary values
+colors = {
+    (True, False): 'yellow',
+    (False, True): 'black',
+    (True, True): 'red',
+    (False, False): 'gray'
+}
+fig, ax = plt.subplots()
+
+# Iterate over the data and plot each slice
+for i in range(len(labels)):
+    color = colors[(is_highlighted[i], is_outlined[i])]
+    value = values[i]
+    ax.pie([value, 100-value],
+           colors=[color, 'white'],
+           startangle=90, counterclock=False)
+
+# Add a legend
+handles = []
+for is_highlighted, is_outlined in colors.keys():
+    handles.append(plt.Rectangle((0,0), 1, 1, fc=colors[(is_highlighted, is_outlined)]))
+plt.legend(handles, ['Highlighted and Outlined', 'Highlighted Only', 'Outlined Only', 'Not Highlighted or Outlined'], loc="best")
+
+# Add a title
+plt.title("My Pie Chart")
+
+# Show the plot
+plt.show()
 
 
