@@ -15,6 +15,11 @@ from googleapiclient.discovery import build
 from PIL import Image
 import os
 
+SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
+
 st.cache_data(ttl=600)
 def load_data(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
