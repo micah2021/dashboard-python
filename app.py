@@ -78,8 +78,9 @@ with col1:
     st.plotly_chart(g1, use_container_width=True)
 
 # column 2 - Bar chart Count Meals By day
+
 with col2:
-    ind3 = pd.DataFrame(df.groupby('Ethnicity').Ethnicity.count()).rename(columns={'Ethnicity':'count'}).reset_index()
+    ind3 = pd.DataFrame(df.groupby('Ethnicity').count()).rename(columns={'Ethnicity':'count'}).reset_index()
     g3 = px.bar(ind3,
                 x='Ethnicity',
                 y='count',
