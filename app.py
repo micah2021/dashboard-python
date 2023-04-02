@@ -70,7 +70,7 @@ colors = {
     (False, False): 'gray'
 }
 fig, ax = plt.subplots()
-
+st.pyplot(fig)
 # Iterate over the data and plot each slice
 for i in range(len(labels)):
     color = colors[(is_highlighted[i], is_outlined[i])]
@@ -90,7 +90,7 @@ plt.title("My Pie Chart")
 
 # Show the plot
 plt.show()
-st.pyplot(fig)
+
 if filter_sex == 'Both':
 	pass
 elif filter_sex == 'Male':
