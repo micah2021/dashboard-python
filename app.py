@@ -90,6 +90,7 @@ plt.title("My Pie Chart")
 
 # Show the plot
 plt.show()
+st.pyplot(fig)
 if filter_sex == 'Both':
 	pass
 elif filter_sex == 'Male':
