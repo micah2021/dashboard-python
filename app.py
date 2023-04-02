@@ -29,15 +29,7 @@ for seconds in range(5):
 	# Convert the result to a Pandas DataFrame
 	data = result.get('values', [])
 	df= pd.DataFrame(data[1:], columns=data[0])
-time.sleep(1)
-	
-	
-	
-
-
-
-
-
+time.sleep(1)	
 
 # read csv from a github repo
 #df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
@@ -57,52 +49,28 @@ else:
     	st.write('No update of datasets yet')
 # top-level filters 
 
+st.sidebar.checkbox("Show Analysis by Race", True, key=1)
+select = st.sidebar.selectbox('Select a Race',df['Ethnicity'])
 
-filter_sex = st.sidebar.radio('Filter By Sex', options=['Both', 'Female', 'Male'])
-labels = ['Male', 'Female']
-values = df['Gender'].value_counts()
-is_highlighted = [True, False]
-is_outlined = [False, True]
-colors = {
-    (True, False): 'yellow',
-    (False, True): 'black',
-    (True, True): 'red',
-    (False, False): 'gray'
-}
-fig, ax = plt.subplots()
-st.pyplot(fig)
-# Iterate over the data and plot each slice
-for i in range(len(labels)):
-    color = colors[(is_highlighted[i], is_outlined[i])]
-    value = values[i]
-    ax.pie([value, 100-value],
-           colors=[color, 'white'],
-           startangle=90, counterclock=False)
+#get the state selected in the selectbox
+state_data = df[df['Ethnicity'] == select]
+select_status = st.sidebar.radio("Covid-19 patient's status", ('Caucasian','Mogolian', 'Black', 'Others'))
+def get_total_dataframe(df):
+    total_dataframe = pd.DataFrame({
+    'Ethnicity':['Caucasian', 'Mogolian', 'Black','Others'],
+    'Number of cases':(dataset.iloc[0]['Caucasian'],
+    dataset.iloc[0]['Mogolian'], 
+    dataset.iloc[0]['Black'],dataset.iloc[0]['Others'])})
+    return total_dataframe
 
-# Add a legend
-handles = []
-for is_highlighted, is_outlined in colors.keys():
-    handles.append(plt.Rectangle((0,0), 1, 1, fc=colors[(is_highlighted, is_outlined)]))
-plt.legend(handles, ['Highlighted and Outlined', 'Highlighted Only', 'Outlined Only', 'Not Highlighted or Outlined'], loc="best")
+state_total = get_total_dataframe(state_data)
 
-# Add a title
-plt.title("My Pie Chart")
-
-# Show the plot
-plt.show()
-
-if filter_sex == 'Both':
-	pass
-elif filter_sex == 'Male':
-	dmale = df['Gender'].value_counts()
-
-else:
-	dfemale=df['Gender'].value_counts()
-
-
-
-# Define the colors for each combination of binary values
-
-
-
-
+if st.sidebar.checkbox("Show Analysis by State", True, key=2):
+    st.markdown("## **State level analysis**")
+    st.markdown("### Overall Confirmed, Active, Recovered and " +
+    "Deceased cases in %s yet" % (select))
+    if not st.checkbox('Hide Graph', False, key=1):
+	state_total_graph = px.bar(state_total, x='Ethnicity',y='S/No',
+        labels={'Number of cases':'Number of cases in %s' % (select)},
+        color='Status')
+        st.plotly_chart(state_total_graph)
