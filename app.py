@@ -14,6 +14,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from PIL import Image
 import os
+import gspread
   
 SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
