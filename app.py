@@ -17,8 +17,18 @@ import os
   
 SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+creds=None
 creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+SAMPLE_SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 
+service=build("sheets", "v4", credentials=creds)
+
+
+sheet_url="https://docs.google.com/spreadsheets/d/1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8/edit#gid=0"
+sheet = client.open_by_url(sheet_url).sheet1
+data = sheet.get_all_values()
+data = sheet.get_all_values()
+st.table(data)
 
 st.cache_data(ttl=600)
 def load_data(sheets_url):
