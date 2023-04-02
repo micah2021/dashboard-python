@@ -67,10 +67,7 @@ state_total = get_total_dataframe(state_data)
 
 if st.sidebar.checkbox("Show Analysis by State", True, key=2):
     st.markdown("## **State level analysis**")
-    st.markdown("### Overall Confirmed, Active, Recovered and " +
-    "Deceased cases in %s yet" % (select))
+    st.markdown("### Overall Confirmed, Active, Recovered and " +"Deceased cases in %s yet" % (select))
     if not st.checkbox('Hide Graph', False, key=1):
-	state_total_graph = px.bar(state_total, x='Ethnicity',y='S/No',
-        labels={'Number of cases':'Number of cases in %s' % (select)},
-        color='Status')
+	state_total_graph = px.bar(state_total, x='Ethnicity',y='S/No',labels={'Number of cases':'Number of cases in %s' % (select)},color='Ethnicity')
         st.plotly_chart(state_total_graph)
