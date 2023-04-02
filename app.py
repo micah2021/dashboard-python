@@ -57,12 +57,12 @@ if filter_sex == 'Both':
 else:
     df = df.query('sex == @filter_sex')
 
-# By City
+counts = df['Gender'].value_counts()
 
-
-       
-
-
+# Create the pie chart using Streamlit
+st.title('Pie Chart Example')
+st.write(counts)
+st.pie_chart(counts)
 
 
 
