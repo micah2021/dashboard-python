@@ -59,20 +59,10 @@ else:
 
 
 filter_sex = st.sidebar.radio('Filter By Sex', options=['Both', 'Female', 'Male'])
-if filter_sex == 'Both':
-	pass
-elif filter_sex == 'Male':
-	dmale = df['Gender'].value_counts()
-
-else:
-	dfemale=df['Gender'].value_counts()
-
 labels = ['Male', 'Female']
 values = df['Gender'].value_counts()
 is_highlighted = [True, False]
 is_outlined = [False, True]
-
-# Define the colors for each combination of binary values
 colors = {
     (True, False): 'yellow',
     (False, True): 'black',
@@ -100,5 +90,18 @@ plt.title("My Pie Chart")
 
 # Show the plot
 plt.show()
+if filter_sex == 'Both':
+	pass
+elif filter_sex == 'Male':
+	dmale = df['Gender'].value_counts()
+
+else:
+	dfemale=df['Gender'].value_counts()
+
+
+
+# Define the colors for each combination of binary values
+
+
 
 
