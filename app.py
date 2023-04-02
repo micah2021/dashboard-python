@@ -39,8 +39,6 @@ result = service.spreadsheets().values().get(
 # Convert the result to a Pandas DataFrame
 data = result.get('values', [])
 df= pd.DataFrame(data[1:], columns=data[0])
-
-
 """"
 
 # read csv from a github repo
