@@ -78,7 +78,7 @@ def app():
 	subset = df.loc[df['Ethnicity']=="Others"]
 	fig2, ax4 = plt.subplots()
 
-	sns.distplot(subset["Porn (%)"], color='red')
+	sns.displot(subset["Porn (%)"], color='red')
 	ax4.set_title('Distribution of Total Others Races with Porn')
 
 # Display the plot using Streamlit
