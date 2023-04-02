@@ -29,7 +29,7 @@ result = service.spreadsheets().values().get(
 # Convert the result to a Pandas DataFrame
 data = result.get('values', [])
 df1 = pd.DataFrame(data[1:], columns=data[0])
-dataset=st.dataframe(df1)
+
 
 
 def app():
