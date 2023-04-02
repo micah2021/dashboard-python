@@ -60,11 +60,12 @@ else:
 
 filter_sex = st.sidebar.radio('Filter By Sex', options=['Both', 'Female', 'Male'])
 if filter_sex == 'Both':
-    pass
-else:
-    df = df.query('sex == @filter_sex')
+	pass
+elif filter_sex == 'Male':
+	dmale = df['Gender'].value_counts()
 
-counts = df['Gender'].value_counts()
+else:
+	dfemale=df['Gender'].value_counts()
 
 
 
