@@ -71,3 +71,4 @@ if st.sidebar.checkbox("Show Analysis by State", True, key=2):
     if not st.checkbox('Hide Graph', False, key=1):
 	state_total_graph = px.bar(state_total, x='Ethnicity',y='S/No',labels={'Number of cases':'Number of cases in %s' % (select)},color='Ethnicity')
         st.plotly_chart(state_total_graph)
+  
