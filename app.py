@@ -31,7 +31,7 @@ for seconds in range(200):
 	# Convert the result to a Pandas DataFrame
 	data = result.get('values', [])
 	df= pd.DataFrame(data[1:], columns=data[0])
-    time.sleep(1)
+time.sleep(1)
 	
 	
 	
@@ -68,9 +68,6 @@ else:
 
 counts = df['Gender'].value_counts()
 
-fig, ax = plt.subplots()
-ax.pie(data.values(), labels=counts, autopct='%1.1f%%', startangle=90)
-ax.axis('equal')
 
 
 
