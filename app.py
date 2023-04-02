@@ -14,7 +14,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from PIL import Image
 import os
-import gspread
+
   
 SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
@@ -49,6 +49,65 @@ if st.button('Check Updates'):
 else:
     	st.write('No update of datasets yet')
 # top-level filters 
+st.sidebar.text('By Sex')
+filter_sex = st.sidebar.radio('Filter By Sex', options=['Both', 'Female', 'Male'])
+if filter_sex == 'Both':
+    pass
+else:
+    df = df.query('sex == @filter_sex')
+
+# By City
+st.sidebar.text('Race')
+filter_city = st.sidebar.multiselect('Filter By City', options=city, default=city)
+df = df.query('city in @filter_city')
+	
+col1, col2, col3 = st.columns(3)
+# column 1 - Pie chart Gender
+with col1:
+    ind1 = pd.DataFrame(df.groupby('Gender').sex.count()).rename(columns={'sex':'count'}).reset_index()
+    g1 = px.pie(ind1,
+                values='count',
+                names='sex',
+                color='sex',
+                color_discrete_map={'Male': 'royalblue','Female': 'pink'},
+                title='| GENDER')
+    g1.update_traces(textposition='inside',
+                     textinfo='percent+label',
+                     showlegend=False)
+    st.plotly_chart(g1, use_container_width=True)
+
+# column 2 - Bar chart Count Meals By day
+with col2:
+    ind3 = pd.DataFrame(df.groupby('Ethnicity').Ethnicity.count()).rename(columns={'Ethnicity':'count'}).reset_index()
+    g3 = px.bar(ind3,
+                x='Ethnicity',
+                y='count',
+                title='| POPULAR DAYS')
+    st.plotly_chart(g3, use_container_width=True)
+
+# column 3 - Pie chart Count Meals By Time
+with col3:
+    ind2 = pd.DataFrame(df.groupby('Model').Model.count()).rename(columns={'Model':'count'}).reset_index()
+    g2 = px.pie(ind2,
+                values='count',
+                names='Model',
+                color='Model',
+                color_discrete_map={'FALSE': 'royalblue','TRUE': 'darkblue'},
+                title='| POPULAR TIMES')
+    g2.update_traces(textposition='inside',
+                     textinfo='percent+label',
+                     showlegend=False)
+    st.plotly_chart(g2, use_container_width=True)
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
 	
 	
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))	
