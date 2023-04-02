@@ -23,9 +23,7 @@ SAMPLE_SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 
 service=build("sheets", "v4", credentials=creds)
 
-client = gspread.authorize(creds)
-sheet_url="https://docs.google.com/spreadsheets/d/1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8/edit#gid=0"
-sheet = client.open_by_url(sheet_url).sheet1
+sheet=service.spreadsheets()
 data = sheet.get_all_values()
 data = sheet.get_all_values()
 st.table(data)
