@@ -14,7 +14,8 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from PIL import Image
 import os
-
+from pandas_profilling import ProfileReport
+from streamlit_profilling_report import st_profile_report
   
 SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
@@ -59,7 +60,8 @@ else:
 
 # By City
 
-
+pr=ProfileReport(df,explorative=True)
+st_profilingreport(pr)
 
        
 
