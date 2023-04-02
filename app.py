@@ -22,7 +22,7 @@ creds=None
 creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 service=build("sheets", "v4", credentials=creds)
-
+client = gspread.authorize(creds)
 workbook = client.open('your-workbook-name')
 
 # Open a specific sheet in the workbook
