@@ -59,10 +59,9 @@ else:
 
 counts = df['Gender'].value_counts()
 
-# Create the pie chart using Streamlit
-st.title('Pie Chart Example')
-st.write(counts)
-st.pie_chart(counts)
+fig, ax = plt.subplots()
+ax.pie(data.values(), labels=counts, autopct='%1.1f%%', startangle=90)
+ax.axis('equal')
 
 
 
