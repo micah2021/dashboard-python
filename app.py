@@ -49,7 +49,8 @@ if st.button('Check Updates'):
 else:
     	st.write('No update of datasets yet')
 # top-level filters 
-st.sidebar.text('By Sex')
+
+
 filter_sex = st.sidebar.radio('Filter By Sex', options=['Both', 'Female', 'Male'])
 if filter_sex == 'Both':
     pass
@@ -57,9 +58,9 @@ else:
     df = df.query('sex == @filter_sex')
 
 # By City
-st.sidebar.text('Race')
-filter_city = st.sidebar.multiselect('Filter By City', options=city, default=city)
-df = df.query('city in @filter_city')
+
+filter_city = st.sidebar.multiselect('Filter By City', options=df['Ethnicity'], default=df['Ethnicity'])
+df = df.query('Race in @filter_city')
 	
 col1, col2, col3 = st.columns(3)
 # column 1 - Pie chart Gender
