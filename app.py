@@ -198,10 +198,7 @@ def app():
 
 
        
-while True:
-    app()
-    time.sleep(10)
-# dataframe filter 
+
 
 
 
