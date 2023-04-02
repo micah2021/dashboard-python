@@ -28,14 +28,14 @@ result = service.spreadsheets().values().get(
 
 # Convert the result to a Pandas DataFrame
 data = result.get('values', [])
-df1 = pd.DataFrame(data[1:], columns=data[0])
+df= pd.DataFrame(data[1:], columns=data[0])
 
 
 
 def app():
 # read csv from a github repo
 	#df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSEIbfyVxix6r_fDNU17bQZzNONVeZYSxPEW3waEve5GmbuSUS5CHKPgVlQkyQo3TQewL9gyodvBdsh/pub?output=csv")
-	df=dataset
+	
 
 	st.set_page_config(
     	page_title = 'Lifelight Dashboard',
