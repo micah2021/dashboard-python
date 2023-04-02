@@ -18,15 +18,14 @@ import os
 
 	
 for seconds in range(200):
+	
 	SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
 	SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 	creds=None
 	creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 	SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 	service=build("sheets", "v4", credentials=creds)
-	 
-  	result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range="Sheet1!A1:L100").execute()
-
+	result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range="Sheet1!A1:L100").execute()
 	# Convert the result to a Pandas DataFrame
 	data = result.get('values', [])
 	df= pd.DataFrame(data[1:], columns=data[0])
