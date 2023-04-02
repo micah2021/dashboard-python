@@ -24,12 +24,12 @@ SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 service=build("sheets", "v4", credentials=creds)
 result = service.spreadsheets().values().get(
     spreadsheetId=SPREADSHEET_ID,
-    range="Sheet1!A1:B2").execute()
+    range="Sheet1!A1:L100").execute()
 
 # Convert the result to a Pandas DataFrame
 data = result.get('values', [])
 df = pd.DataFrame(data[1:], columns=data[0])
-
+df.head()
 st.cache_data(ttl=600)
 def load_data(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
