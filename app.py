@@ -65,7 +65,7 @@ df =(df['Ethnicity'])
 col1, col2, col3 = st.columns(3)
 # column 1 - Pie chart Gender
 with col1:
-    ind1 = pd.DataFrame(df.groupby('Gender').sex.count()).rename(columns={'sex':'count'}).reset_index()
+    ind1 = pd.DataFrame(df.groupby(df['Gender']).count()).rename(columns={'sex':'count'}).reset_index()
     g1 = px.pie(ind1,
                 values='count',
                 names='sex',
