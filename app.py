@@ -60,7 +60,7 @@ else:
 # By City
 
 filter_city = st.sidebar.multiselect('Filter By City', options=df['Ethnicity'], default=df['Ethnicity'])
-df = df.query(df['Ethnicity'])
+df =(df['Ethnicity'])
 	
 col1, col2, col3 = st.columns(3)
 # column 1 - Pie chart Gender
