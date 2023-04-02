@@ -24,7 +24,7 @@ SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 service=build("sheets", "v4", credentials=creds)
 result = service.spreadsheets().values().get(
     spreadsheetId=SPREADSHEET_ID,
-    range="Sheet1:").execute()
+    range="Sheet1!A1:B2").execute()
 
 # Convert the result to a Pandas DataFrame
 data = result.get('values', [])
