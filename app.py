@@ -16,7 +16,7 @@ from PIL import Image
 import os
 import gspread
   
-SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
+SERVICE_ACCOUNT_FILE = os.path.abspath("lifelight.json")
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets","https://www.googleapis.com/auth/drive"]
 creds=None
 creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
