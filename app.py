@@ -17,7 +17,7 @@ import os
 
 
 	
-for seconds in range(10):
+for seconds in range(5):
 	
 	SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
 	SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
