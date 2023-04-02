@@ -61,7 +61,7 @@ else:
 
 filter_city = st.sidebar.multiselect('Filter By City', options=df['Ethnicity'], default=df['Ethnicity'])
 df =(df['Ethnicity'])
-
+col1= st.columns(1)
 # column 1 - Pie chart Gender
 with col1:
     ind1 = pd.DataFrame(df.groupby(df['Gender']).count()).rename(columns={'sex':'count'}).reset_index()
