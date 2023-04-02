@@ -24,7 +24,7 @@ SPREADSHEET_ID= '1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8'
 service=build("sheets", "v4", credentials=creds)
 result = service.spreadsheets().values().get(
     spreadsheetId=SPREADSHEET_ID,
-    range="Sheet1!A1:L100").execute()
+    range="Sheet1!A1:").execute()
 
 # Convert the result to a Pandas DataFrame
 data = result.get('values', [])
@@ -53,8 +53,7 @@ else:
 	
 	
 select1 = st.sidebar.selectbox("Select the Gender", pd.unique(df['Gender']))	
-	
-
+label=df["Gender"]
 sizes =df['Gender'].value_counts()
 # Create the pie chart using matplotlib
 fig, ax3 = plt.subplots()
