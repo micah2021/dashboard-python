@@ -69,7 +69,7 @@ plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
 plt.title("Gender")
 # Display the pie chart
 
-st.plotly_chart(fig1)
+st.plotly(fig1)
 grouped_data = df.groupby("Ethnicity").size()
 
 # Create bar chart
@@ -83,9 +83,6 @@ ax.set_title("Categorical Data Bar Chart")
 
 
 fig3 = px.bar(df, x='Gender', y='Model')
-
-
-dataframe=df.query("Gender==@gender & Ethnicity==@Ethnic")
 
 col2, col3 = st.beta_columns(2)
 
