@@ -84,7 +84,8 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-fig, ax=plt.hist(df, bins=30)
+fig, ax= plt.subplots()
+plt.hist(df, bins=30)
 
 # Set the chart title and axis labels
 plt.title('Histogram of Sample Data')
