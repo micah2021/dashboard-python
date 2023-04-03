@@ -82,7 +82,7 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-fig1 = px.scatter(df, x='Ethnicity', y='Porn (%)')
+fig1 = px.scatter(df, y='Ethnicity', x='Porn (%)')
 st.plotly_chart(fig1)
 
 st.title("Stroke Prediction Dashboard")
