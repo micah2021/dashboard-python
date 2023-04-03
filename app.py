@@ -17,7 +17,7 @@ import os
 import altair as alt
 
 
-
+st.balloons()
 	
 for seconds in range(5):
 	
@@ -93,11 +93,7 @@ st.sidebar.title("Select Visual Charts")
 st.sidebar.markdown("Select the Charts/Plots accordingly:")
 
 
-fig, ax = plt.subplots()
-df = pd.DataFrame(df[:200], columns = ["Porn (%)","Drawing (%)", "Hentai (%)"])
-df["Porn (%)", "Drawing (%)"].hist()
-plt.show()
-st.pyplot(fig)
+
 
 
 
