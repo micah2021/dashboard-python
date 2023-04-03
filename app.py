@@ -82,15 +82,17 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-chart = alt.Chart(df).mark_line().encode(
-    x="Ethnicity",
-    y="Porn (%)"
-).transform_filter(
-    alt.datum.x_column > 0
-).interactive()
+x = df["Drawing (%)"]
+y = df["Porn (%)"]
 
-# Display the chart using Streamlit
-st.vega_lite_chart(chart, use_container_width=True)
+p = figure(
+    title='simple line example',
+    x_axis_label='Porn',
+    y_axis_label='Drawing')
+
+p.line(x, y, legend_label='Trend', line_width=2)
+
+st.bokeh_chart(p, use_container_width=True)
 
 
 
