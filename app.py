@@ -83,8 +83,8 @@ ax.set_title("Categorical Data Bar Chart")
 st.pyplot(fig)
 
 chart = alt.Chart(df).mark_line().encode(
-    x="Ethnicity",
-    y="Porn"
+    x="Drawing (%)",
+    y="Porn (%)"
 ).transform_filter(
     alt.datum.x_column > 0
 ).interactive()
