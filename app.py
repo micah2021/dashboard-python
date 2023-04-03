@@ -56,7 +56,7 @@ select = st.sidebar.selectbox(" ", df['Gender'].unique())
 state_data = df[df['Ethnicity'] == select]
 select_status = st.sidebar.radio("Ethnicity", ('Caucasian','Mogolian', 'Black', 'Others'))
 
-values = df["Gender"].count()
+values = df["Gender"].value_counts()
 print(values)
 # Define labels for binary data values
 labels = ["Female", "Male"]
