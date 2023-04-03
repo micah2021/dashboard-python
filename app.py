@@ -90,7 +90,7 @@ plt.hist(df, bins=30)
 # Set the chart title and axis labels
 plt.title('Histogram of Sample Data')
 plt.xlabel('Ethnicity')
-plt.ylabel('Porn (%)')
+plt.ylabel('Gender')
 
 # Display the chart using Streamlit
 st.pyplot(fig)
