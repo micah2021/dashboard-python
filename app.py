@@ -93,6 +93,6 @@ with col1:
 
 with col2:
     st.plotly_chart(fig2)
-with col2:
-    st.plotly_chart(fig3
+with col3:
+    st.plotly_chart(fig3)
 
