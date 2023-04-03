@@ -82,14 +82,13 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-fig, ax = plt.subplots()
-ax.plot(df["Gender"], df["Porn (%)"])
-ax.set_xlabel("Count")
-ax.set_ylabel("Porn")
-ax.set_title("Line Chart")
+chart = alt.Chart(df).mark_line().encode(
+    x="Porn (%)",
+    y="Drawing (%)"
+)
 
-# Display the line chart using Streamlit
-st.pyplot(fig)
+# Display the chart using Streamlit
+st.altair_chart(chart, use_container_width=True)
 
 
 
