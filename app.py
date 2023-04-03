@@ -94,7 +94,7 @@ st.sidebar.markdown("Select the Charts/Plots accordingly:")
 
 
 fig, ax = plt.subplots()
-df = pd.DataFrame(df[:200], columns = ["Porn (%)","Drawing (%)", "Ethnicity"])
+df = pd.DataFrame(df[:200], columns = ["Porn (%)","Drawing (%)", "Hentai (%)"])
 df.hist()
 plt.show()
 st.pyplot(fig)
