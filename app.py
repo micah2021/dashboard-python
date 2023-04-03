@@ -53,7 +53,7 @@ st.sidebar.checkbox("Show Analysis by Gender", True, key=1)
 gender = st.sidebar.selectbox(" ", df['Gender'].unique())
 
 #get the state selected in the selectbox
-state_data = df[df['Ethnicity'] == select]
+state_data = df[df['Ethnicity'] == gender]
 Ethnic = st.sidebar.radio("Ethnicity", ('Caucasian','Mogolian', 'Black', 'Others'))
 
 values = df["Gender"].value_counts()
