@@ -57,8 +57,6 @@ state_data = df[df['Ethnicity'] == select]
 select_status = st.sidebar.radio("Ethnicity", ('Caucasian','Mogolian', 'Black', 'Others'))
 
 values = df["Gender"].value_counts()
-print(values)
-# Define labels for binary data values
 labels = ["Female", "Male"]
 
 # Define colors for binary data values
@@ -69,9 +67,22 @@ plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
 
 # Add title to the pie chart
 plt.title("Gender")
-
 # Display the pie chart
 st.pyplot(fig)
+
+grouped_data = df.groupby("Ethnicity").size()
+
+# Create bar chart
+fig, ax = plt.subplots()
+ax.bar(grouped_data.index, grouped_data.values)
+ax.set_xlabel("Ethnicity")
+ax.set_ylabel("S/No")
+ax.set_title("Categorical Data Bar Chart")
+
+# Display the bar chart using Streamlit
+st.pyplot(fig)
+
+
 
 
 
