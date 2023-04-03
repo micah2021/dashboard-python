@@ -15,7 +15,7 @@ from googleapiclient.discovery import build
 from PIL import Image
 import os
 import altair as alt
-import vega_datasets
+
 
 
 	
