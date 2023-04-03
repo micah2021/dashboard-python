@@ -54,7 +54,28 @@ select = st.sidebar.selectbox(" ", df['Gender'].unique())
 
 #get the state selected in the selectbox
 state_data = df[df['Ethnicity'] == select]
-select_status = st.sidebar.radio("Covid-19 patient's status", ('Caucasian','Mogolian', 'Black', 'Others'))
+select_status = st.sidebar.radio("Ethnicity", ('Caucasian','Mogolian', 'Black', 'Others'))
+
+values = df["Gender"].count()
+print(values)
+# Define labels for binary data values
+labels = ["Female", "Male"]
+
+# Define colors for binary data values
+colors = ["blue", "orange"]
+fig, ax = plt.subplots()
+# Create pie chart
+plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
+
+# Add title to the pie chart
+plt.title("Gender")
+
+# Display the pie chart
+st.pyplot(fig)
+
+
+
+
 def get_total_dataframe(df):
     total_dataframe = pd.DataFrame({
     'Ethnicity':['Caucasian', 'Mogolian', 'Black','Others'],
