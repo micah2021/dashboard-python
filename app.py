@@ -84,15 +84,15 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-chart = alt.Chart(df["Ethnicity"]).mark_line().encode(
-    x='Ethnicity',
-    y='Porn (%)',
-    color='symbol'
-).interactive()
+plt.hist(df, bins=30)
+
+# Set the chart title and axis labels
+plt.title('Histogram of Sample Data')
+plt.xlabel('Porn (%)')
+plt.ylabel('Drawing (%)')
 
 # Display the chart using Streamlit
-st.altair_chart(chart, use_container_width=True)
-
+st.pyplot()
 
 
 def get_total_dataframe(df):
