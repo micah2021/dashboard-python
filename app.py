@@ -69,7 +69,7 @@ plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
 plt.title("Gender")
 # Display the pie chart
 
-st.pyplot(fig1)
+st.pyplot(fig1, width=500, height=500)
 grouped_data = df.groupby("Ethnicity").size()
 
 # Create bar chart
