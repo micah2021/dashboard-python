@@ -17,8 +17,6 @@ import os
 import altair as alt
 
 
-st.balloons()
-	
 for seconds in range(5):
 	
 	SERVICE_ACCOUNT_FILE = os.path.abspath("key.json")
@@ -84,7 +82,8 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-import plotly.graph_objects as go
+fig1 = px.scatter(df, x='Ethnicity', y='Porn (%)')
+st.plotly_chart(fig1)
 
 st.title("Stroke Prediction Dashboard")
 st.markdown("The dashboard will help a researcher to get to know \
