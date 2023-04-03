@@ -50,7 +50,7 @@ else:
 # top-level filters 
 
 st.sidebar.checkbox("Show Analysis by Race", True, key=1)
-select = st.sidebar.selectbox('Select a Race',df['Ethnicity'])
+select = st.sidebar.selectbox('Select a Race',df['Ethnicity'].unique())
 
 #get the state selected in the selectbox
 state_data = df[df['Ethnicity'] == select]
