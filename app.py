@@ -63,10 +63,10 @@ labels = ["Female", "Male"]
 colors = ["blue", "orange"]
 fig1, ax = plt.subplots()
 # Create pie chart
-plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
+plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%', figsize=(5, 5))
 
 # Add title to the pie chart
-plt.title("Gender")
+plt.title("Gender by Count")
 # Display the pie chart
 
 st.pyplot(fig1, width=500, height=500)
