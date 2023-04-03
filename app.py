@@ -63,13 +63,13 @@ labels = ["Female", "Male"]
 colors = ["blue", "orange"]
 fig1, ax = plt.subplots()
 # Create pie chart
-plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%', figsize=(5, 5))
+plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
 
 # Add title to the pie chart
 plt.title("Gender by Count")
 # Display the pie chart
 
-st.pyplot(fig1, width=500, height=500)
+st.pyplot(fig1,figsize=(5, 5))
 grouped_data = df.groupby("Ethnicity").size()
 
 # Create bar chart
