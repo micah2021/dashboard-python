@@ -14,7 +14,8 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from PIL import Image
 import os
-from bokeh.plotting import figure
+import altair as alt
+import vega_datasets
 
 
 	
@@ -83,17 +84,14 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-x = df["Drawing (%)"]
-y = df["Porn (%)"]
+chart = alt.Chart(df).mark_line().encode(
+    x='Ethnicity',
+    y='Porn (%)',
+    color='symbol'
+).interactive()
 
-p = figure(
-    title='simple line example',
-    x_axis_label='Porn',
-    y_axis_label='Drawing')
-
-p.line(x, y, legend_label='Trend', line_width=2)
-
-st.bokeh_chart(p, use_container_width=True)
+# Display the chart using Streamlit
+st.altair_chart(chart, use_container_width=True)
 
 
 
