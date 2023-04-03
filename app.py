@@ -73,7 +73,7 @@ st.pyplot(fig)
 grouped_data = df.groupby("Ethnicity").size()
 
 # Create bar chart
-fig, ax = plt.subplots()
+fig, ax = plt.subplots() 
 ax.bar(grouped_data.index, grouped_data.values)
 ax.set_xlabel("Ethnicity")
 ax.set_ylabel("Porn (%)")
@@ -82,6 +82,8 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
+fig2 = px.bar(df, x='Ethnicity', y='Porn (%)')
+st.plotly_chart(fig2)
 fig1 = px.scatter(df, y='Drawing (%)', x='Porn (%)')
 st.plotly_chart(fig1)
 
