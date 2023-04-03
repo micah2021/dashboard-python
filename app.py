@@ -83,13 +83,14 @@ ax.set_title("Categorical Data Bar Chart")
 st.pyplot(fig)
 
 chart = alt.Chart(df).mark_line().encode(
-    y="Porn (%)",
-    x="Ethnicity"
-)
+    x="Ethnicity",
+    y="Porn"
+).transform_filter(
+    alt.datum.x_column > 0
+).interactive()
 
 # Display the chart using Streamlit
-st.altair_chart(chart, use_container_width=True)
-
+st.vega_lite_chart(chart, use_container_width=True)
 
 
 
