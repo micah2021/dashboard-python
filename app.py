@@ -84,7 +84,7 @@ st.pyplot(fig)
 
 chart = alt.Chart(df).mark_line().encode(
     x="Porn (%)",
-    y="Drawing (%)"
+    y="Ethnicity"
 )
 
 # Display the chart using Streamlit
