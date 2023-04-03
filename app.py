@@ -61,7 +61,7 @@ labels = ["Female", "Male"]
 
 # Define colors for binary data values
 colors = ["blue", "orange"]
-fig2, ax = plt.subplots()
+fig1, ax = plt.subplots()
 # Create pie chart
 plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
 
@@ -73,7 +73,7 @@ plt.title("Gender")
 grouped_data = df.groupby("Ethnicity").size()
 
 # Create bar chart
-fig3, ax = plt.subplots() 
+fig2, ax = plt.subplots() 
 ax.bar(grouped_data.index, grouped_data.values)
 ax.set_xlabel("Ethnicity")
 ax.set_ylabel("Porn (%)")
@@ -82,12 +82,12 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 
 
-fig4 = px.bar(df, x='Gender', y='Model')
+fig3 = px.bar(df, x='Gender', y='Model')
 
 
 dataframe=df.query("Gender==@gender & Ethnicity==@Ethnic")
 
-col1, col2, col3, col4 = st.beta_columns(4)
+col1, col2, col3 = st.beta_columns(3)
 with col1:
     st.plotly_chart(fig1)
 
@@ -95,6 +95,4 @@ with col2:
     st.plotly_chart(fig2)
 with col2:
     st.plotly_chart(fig3
-with col2:
-    st.plotly_chart(fig4)
 
