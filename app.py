@@ -50,7 +50,7 @@ else:
 # top-level filters 
 
 st.sidebar.checkbox("Show Analysis by Gender", True, key=1)
-select = st.sidebar.selectbox(df['Gender'].unique())
+select = st.sidebar.selectbox(" ", df['Gender'].unique())
 
 #get the state selected in the selectbox
 state_data = df[df['Ethnicity'] == select]
