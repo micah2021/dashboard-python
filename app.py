@@ -84,7 +84,7 @@ st.pyplot(fig)
 
 fig2 = px.bar(df, x='Gender', y='Porn (%)')
 st.plotly_chart(fig2)
-fig1 = px.scatter(df, y='Drawing (%)', x='Porn (%)')
+fig1 = px.pie(df, y='Drawing (%)', x='Porn (%)')
 st.plotly_chart(fig1)
 
 st.title("Stroke Prediction Dashboard")
