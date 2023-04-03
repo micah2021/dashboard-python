@@ -50,11 +50,11 @@ else:
 # top-level filters 
 
 st.sidebar.checkbox("Show Analysis by Gender", True, key=1)
-select = st.sidebar.selectbox(" ", df['Gender'].unique())
+gender = st.sidebar.selectbox(" ", df['Gender'].unique())
 
 #get the state selected in the selectbox
 state_data = df[df['Ethnicity'] == select]
-select_status = st.sidebar.radio("Ethnicity", ('Caucasian','Mogolian', 'Black', 'Others'))
+Ethnic = st.sidebar.radio("Ethnicity", ('Caucasian','Mogolian', 'Black', 'Others'))
 
 values = df["Gender"].value_counts()
 labels = ["Female", "Male"]
@@ -82,21 +82,10 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-fig2 = px.bar(df, x='Gender', y='Porn (%)')
+fig2 = px.bar(df, x='Gender', y='Model')
 st.plotly_chart(fig2)
-fig1 = px.box(df, x='Ethnicity', y='Porn (%)')
-st.plotly_chart(fig1)
 
-st.title("Stroke Prediction Dashboard")
-st.markdown("The dashboard will help a researcher to get to know \
-more about the given datasets and it's output")
-st.sidebar.title("Select Visual Charts")
-st.sidebar.markdown("Select the Charts/Plots accordingly:")
-
-
-
-
-
+dataframe=df.query("Gender==@gender & Ethnicity==@Ethnic")
 
 
 def get_total_dataframe(df):
