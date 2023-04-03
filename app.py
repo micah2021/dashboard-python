@@ -84,7 +84,7 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
-chart = alt.Chart(df).mark_line().encode(
+chart = alt.Chart(df["Ethnicity"]).mark_line().encode(
     x='Ethnicity',
     y='Porn (%)',
     color='symbol'
