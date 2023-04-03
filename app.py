@@ -82,7 +82,14 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 st.pyplot(fig)
 
+fig, ax = plt.subplots()
+ax.plot(df["S/No"], df["Porn (%)"])
+ax.set_xlabel("Count")
+ax.set_ylabel("Porn")
+ax.set_title("Line Chart")
 
+# Display the line chart using Streamlit
+st.pyplot(fig)
 
 
 
