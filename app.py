@@ -84,7 +84,7 @@ ax.set_title("Categorical Data Bar Chart")
 # Display the bar chart using Streamlit
 
 
-fig3 = px.bar(df, x='Gender', y='Model')
+fig3 = px.bar(df, x='Gender', y='Porn (%)')
 
 col2, col3 = st.beta_columns(2)
 
