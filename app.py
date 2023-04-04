@@ -42,7 +42,7 @@ layout = 'wide'
 	
 # dashboard title
 
-st.write("<a href=https:'//docs.google.com/spreadsheets/d/1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8/edit#gid=0>'> Data source </a>")
+st.write("<a href=https:'//docs.google.com/spreadsheets/d/1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8/edit#gid=0>'> Data source </a>", unsafe_allow_html=True)
 st.title("Real-Time Lifelight Dashboard")
 sh=df.shape
 if st.button('Check Updates'):
