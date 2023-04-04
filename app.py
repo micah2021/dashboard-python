@@ -93,7 +93,7 @@ with col3:
 df1=df["Ethnicity", "Porn (%)"]
 def create_plot():
     fig, ax = plt.subplots(df1)
-    ax = sns.histplot([df1)
+    ax = sns.histplot(df1)
     return fig
 fig = create_plot(df1)
 
