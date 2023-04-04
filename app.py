@@ -91,11 +91,11 @@ with col2:
 with col3:
     st.plotly_chart(fig3)
 
-def create_plot(df):
+def create_plot(df["Ethnicity", "Porn (%)"]):
     fig, ax = plt.subplots()
-    ax = sns.histplot(df)
+    ax = sns.histplot(["Ethnicity", "Porn (%)"])
     return fig
-fig = create_plot(df)
+fig = create_plot(["Ethnicity", "Porn (%)"])
 
 # Display your plot with Streamlit
 st.pyplot(fig)
