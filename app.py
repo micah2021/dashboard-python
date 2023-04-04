@@ -78,7 +78,7 @@ grouped_data = df.groupby("Ethnicity").size()
 fig2, ax = plt.subplots() 
 ax.bar(grouped_data.index, grouped_data.values)
 ax.set_xlabel("Ethnicity")
-ax.set_ylabel("Porn (%)")
+ax.set_ylabel("Gender")
 ax.set_title("Categorical Data Bar Chart")
 
 # Display the bar chart using Streamlit
