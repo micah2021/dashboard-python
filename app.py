@@ -91,7 +91,7 @@ with col2:
 with col3:
     st.plotly_chart(fig3)
 df1=df[["Ethnicity", "Porn (%)"]]
-def create_plot():
+def create_plot(df1):
     fig, ax = plt.subplots(df1)
     ax = sns.histplot(df1)
     return fig
