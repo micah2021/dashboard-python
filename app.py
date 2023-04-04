@@ -90,6 +90,11 @@ with col2:
     st.plotly_chart(fig2)
 with col3:
     st.plotly_chart(fig3)
+
+def create_plot(df):
+    fig, ax = plt.subplots()
+    ax = sns.histplot(df)
+    return fig
 fig = create_plot(df)
 
 # Display your plot with Streamlit
