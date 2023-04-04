@@ -90,4 +90,8 @@ with col2:
     st.plotly_chart(fig2)
 with col3:
     st.plotly_chart(fig3)
+fig = create_plot(df)
+
+# Display your plot with Streamlit
+st.pyplot(fig)
 
