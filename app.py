@@ -41,6 +41,8 @@ layout = 'wide'
 			)
 	
 # dashboard title
+
+st.write("<a href=https:'//docs.google.com/spreadsheets/d/1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8/edit#gid=0>'> Data source </a>")
 st.title("Real-Time Lifelight Dashboard")
 sh=df.shape
 if st.button('Check Updates'):
@@ -90,13 +92,5 @@ with col2:
     st.plotly_chart(fig2)
 with col3:
     st.plotly_chart(fig3)
-df1=df["S/No"]
-def create_plot(df1):
-    fig, ax = plt.subplots(df1)
-    ax = sns.histplot(df1)
-    return fig
-fig = create_plot(df1)
 
-# Display your plot with Streamlit
-st.pyplot(fig)
 
