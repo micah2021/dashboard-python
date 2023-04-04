@@ -90,12 +90,12 @@ with col2:
     st.plotly_chart(fig2)
 with col3:
     st.plotly_chart(fig3)
-
-def create_plot(df["Ethnicity", "Porn (%)"]):
-    fig, ax = plt.subplots()
-    ax = sns.histplot(["Ethnicity", "Porn (%)"])
+df1=df["Ethnicity", "Porn (%)"]
+def create_plot():
+    fig, ax = plt.subplots(df1)
+    ax = sns.histplot([df1)
     return fig
-fig = create_plot(["Ethnicity", "Porn (%)"])
+fig = create_plot(df1)
 
 # Display your plot with Streamlit
 st.pyplot(fig)
