@@ -45,9 +45,10 @@ layout = 'wide'
 st.write("<a href='https://docs.google.com/spreadsheets/d/1bSihbRkViZF1-pGlX8GrtneDpY_FyASOucCf6IZ14V8/edit#gid=0>'> Data source </a>", unsafe_allow_html=True)
 st.title("Real-Time Lifelight Dashboard")
 sh=df.shape
+df
 if st.button('Check Updates'):
     	st.write('# The shape of datasets ', sh)
-	df
+	
 else:
     	st.write('No update of datasets yet')
 # top-level filters 
