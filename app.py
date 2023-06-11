@@ -47,6 +47,7 @@ st.title("Real-Time Lifelight Dashboard")
 sh=df.shape
 if st.button('Check Updates'):
     	st.write('# The shape of datasets ', sh)
+	df
 else:
     	st.write('No update of datasets yet')
 # top-level filters 
