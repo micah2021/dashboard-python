@@ -71,26 +71,6 @@ plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%')
 plt.title("Gender by Count")
 # Display the pie chart
 
-st.pyplot(fig1)
-grouped_data = df.groupby("Ethnicity").size()
 
-# Create bar chart
-fig2, ax = plt.subplots() 
-ax.bar(grouped_data.index, grouped_data.values)
-ax.set_xlabel("Ethnicity")
-ax.set_ylabel("Gender")
-ax.set_title("Categorical Data Bar Chart")
-
-# Display the bar chart using Streamlit
-
-
-fig3 = px.bar(df, x='Gender', y='Porn (%)')
-
-col2, col3 = st.beta_columns(2)
-
-with col2:
-    st.plotly_chart(fig2)
-with col3:
-    st.plotly_chart(fig3)
 
 
