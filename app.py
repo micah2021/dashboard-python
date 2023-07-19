@@ -42,10 +42,10 @@ layout = 'wide'
 	
 # dashboard title
 
-st.write("<a href='https://docs.google.com/spreadsheets/d/1KHSqOAHTGss9ubPMjW2nj8BO70tcsBLtS6A0eqPvhrs/edit#gid=0'> Data source </a>", unsafe_allow_html=True)
-st.title("Real-Time Lifelight Dashboard")
-sh=df.shape
-df
+# st.write("<a href='https://docs.google.com/spreadsheets/d/1KHSqOAHTGss9ubPMjW2nj8BO70tcsBLtS6A0eqPvhrs/edit#gid=0'> Data source </a>", unsafe_allow_html=True)
+# st.title("Real-Time Lifelight Dashboard")
+# sh=df.shape
+# df
 if st.button('Check Updates'):
     	st.write('# The shape of datasets ', sh)
 	
